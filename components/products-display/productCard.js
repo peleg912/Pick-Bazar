@@ -14,6 +14,16 @@ class productCard extends Component{
         },
         productId: ""
     };
+
+    // calcAmount = ()=> {
+    //     if(this.props.productsDistribution.length < 1){
+    //         return 'here';
+    //     }else{
+    //         const _i = this.props.productsDistribution.findIndex(p=> p.productTitle === this.state.currentProduct.title);
+    //         console.log(_i);
+    //         return this.props.productsDistribution[_i].amount;
+    //     }
+    // }
     
     traceProduct = (title)=> {
         const product = this.props.products.find(p=> p.title === title);
@@ -108,7 +118,8 @@ class productCard extends Component{
 
  const mapStateToProps= (state)=> {
      return{
-         products : state.products
+         products : state.products,
+         productsDistribution: state.productsDistribution
      }
  }
 

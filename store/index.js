@@ -3,8 +3,10 @@ import reducer from './reducers/productsReducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 
+
 const initialState = {
  products: [],
+ productsDistribution: [],
  totalPrice: 0.00,
  currentCategory: null
 }

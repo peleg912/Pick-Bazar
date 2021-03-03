@@ -2,6 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import GroceryMenu from './groceryMenu';
 import LanguageMenu from './languageMenu';
+import Link from 'next/link';
 
 class Navbar extends Component{
 
@@ -11,6 +12,7 @@ class Navbar extends Component{
     searchTerm: ''
   }
   
+
  GroceryMenuHandler = ()=> {
       const boolean = this.state.groceryMenu;
       this.setState({groceryMenu: ! boolean});
@@ -33,7 +35,11 @@ searchBarHandler = (event)=> {
        <div className="header-left-menu">
 
          <span className="header-logo">
-           <img src="/static/images/logo.svg" alt="Shop Logo" className="logo-img" href="/#"/>
+           <Link href="/">
+            <a>
+             <img src="/static/images/logo.svg" alt="Shop Logo" className="logo-img"/>
+            </a>
+           </Link>
           </span>
 
     <div className="header-grocery-chooser-container">
@@ -58,8 +64,6 @@ searchBarHandler = (event)=> {
           {this.state.groceryMenu ?
           <GroceryMenu/>: null}
         
-
-
           </div>
           </div>
          </div>
@@ -67,9 +71,9 @@ searchBarHandler = (event)=> {
            <form className="header-search" >
              <svg xmlns="http://www.w3.org/2000/svg" width="17px" height="18px" viewBox="0 0 17.048 18" style={{boxSizing: 'border-box', overflow: 'hidden',marginLeft:'16px', marginRight:'16px', color:'#212121'}}><path id="Path_142" data-name="Path 142" d="M380.321,383.992l3.225,3.218c.167.167.341.329.5.506a.894.894,0,1,1-1.286,1.238c-1.087-1.067-2.179-2.131-3.227-3.236a.924.924,0,0,0-1.325-.222,7.509,7.509,0,1,1-3.3-14.207,7.532,7.532,0,0,1,6,11.936C380.736,383.462,380.552,383.685,380.321,383.992Zm-5.537.521a5.707,5.707,0,1,0-5.675-5.72A5.675,5.675,0,0,0,374.784,384.513Z" transform="translate(-367.297 -371.285)" fill="currentColor"></path></svg>
              <input
-             type="search" 
+            //  type="search" 
              value={this.state.searchTerm} 
-             name="search" 
+            //  name="search" 
              placeholder="Search your products from here" 
              className="header-input"
              onChange={(event)=>this.searchBarHandler(event)}/>
@@ -82,13 +86,15 @@ searchBarHandler = (event)=> {
              </a>
              </div>
              
-             <div className="menu-item">
-               <a className="" style={{display:'flex', alignItems: 'center'}} href="/#">
+             <div className="menu-item" >
+               <Link href="/help">
+               <a className="" style={{display:'flex', alignItems: 'center'}} >
                  <span className="left-menu-ques-mark">
                    <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 14 14"><path id="Path_111" data-name="Path 111" d="M269.443,404.312a7,7,0,1,0,7,7,6.98,6.98,0,0,0-7-7Zm.635,10.818a.3.3,0,0,1-.319.319h-.635a.3.3,0,0,1-.319-.319v-.635a.3.3,0,0,1,.319-.319h.635a.3.3,0,0,1,.319.319Zm.859-2.832c-.446.382-.763.637-.859.987a.308.308,0,0,1-.319.255h-.635a.309.309,0,0,1-.319-.35,2.988,2.988,0,0,1,1.336-1.876c.574-.446.892-.732.892-1.274a1.591,1.591,0,1,0-3.182,0v.191a.3.3,0,0,1-.224.351l-.6.189a.318.318,0,0,1-.414-.253,2.363,2.363,0,0,1-.033-.479,2.864,2.864,0,0,1,5.729,0,2.792,2.792,0,0,1-1.369,2.259Zm0,0" transform="translate(-262.442 -404.312)" fill="currentColor"></path></svg>
                   </span>
                   <span className="label">Need Help</span>
                 </a>
+               </Link>
               </div>
 
               <div className="header-languages">

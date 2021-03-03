@@ -1,6 +1,6 @@
 import React from 'react';
 
-const cartItemWrapper = (props)=> {
+const cartItemsWrapper = (props)=> {
     return(
         <div className="cart-item-wrapper-container">
     <div className="cart-item-wrapper-a">
@@ -8,7 +8,7 @@ const cartItemWrapper = (props)=> {
      </div>
 
      <div className="cart-item-wrapper-c" style={{height: 'calc(100% + 1px)', float: 'left'}}>
-        <div class="cart-item-wrapper-d"> </div>
+        <div className="cart-item-wrapper-d"> </div>
      </div>
 
      <div className="cart-item-wrapper-e" style={{margin: '0px', width: '419px', height: '169px'}}> </div>
@@ -44,4 +44,4 @@ const cartItemWrapper = (props)=> {
 }
 
 
-export default cartItemWrapper;
+export default cartItemsWrapper;

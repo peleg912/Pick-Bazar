@@ -6,7 +6,7 @@ import EmptyCart from '../checkout/emptyCart';
 import CartButton from '../checkout/cartButton';
 import DemosButton from './demosButton';
 import {connect} from 'react-redux';
-import CartItemWrapper from '../checkout/cartItemWrapper';;
+import CartItemsWrapper from '../checkout/cartItemWrapper';;
 import CartItem from '../checkout/cartItem';
 
 class MainLayout extends Component {
@@ -23,6 +23,7 @@ class MainLayout extends Component {
       this.setState({showCheckout: false});
     }
 
+
     cartDisplayHandler = ()=> {
         if (this.props.products.length < 1){
             return (
@@ -30,15 +31,16 @@ class MainLayout extends Component {
             )
         }else {
             return(
-                <CartItemWrapper>
-                    {this.props.products.map(p=> (
+                <CartItemsWrapper>
+                    {this.props.productsDistribution.map(p=> (
                         <CartItem 
-                        key={p.title}
-                        title={p.title}
+                        key={p.productTitle}
+                        amount={p.amount}
+                        title={p.productTitle}
                         price={p.price}
                         img={p.img}/>
                     ))}
-                </CartItemWrapper>
+                </CartItemsWrapper>
 
             )
         }
@@ -74,7 +76,8 @@ class MainLayout extends Component {
 
 const mapStateToProps = (state)=> {
     return{
-        products: state.products
+        products: state.products,
+        productsDistribution: state.productsDistribution
     }
 }
 

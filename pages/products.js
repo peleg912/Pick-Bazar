@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SingleProductWrapper from '../components/singleproduct/singleProductWrapper';
+import SingleProductWrapper from '../components/single-product-display/singleProductWrapper';
 import vegs from '../utills/products/vegs';
 
 class products extends Component {
