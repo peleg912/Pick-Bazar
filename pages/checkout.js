@@ -1,5 +1,8 @@
 import React from 'react';
-import Delivery from '../components/checkout/delivery';
+import DeliveryAddress from '../components/checkout/deliveryAddress';
+import DeliverySchedule from '../components/checkout/deliverySchedule';
+import ContactNumber from '../components/checkout/contactNumber';
+import PaymentOption from '../components/checkout/paymentOption';
 
 const checkout = (props)=> {
     return(
@@ -8,7 +11,10 @@ const checkout = (props)=> {
             <div className="checkout-container">
                 <div className="checkout-wrapper">
                     <div className="checkout-info">
-                        <Delivery/>
+                        <DeliveryAddress/>
+                        <DeliverySchedule/>
+                        <ContactNumber/>
+                        <PaymentOption/>
                     </div>
                     <div className="try">
 

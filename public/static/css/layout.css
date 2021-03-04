@@ -2132,6 +2132,11 @@ z-index: -1;
     box-sizing: border-box;
 }
 
+/* .radio-card:active{
+    border: 1px solid rgb(0, 158, 127);
+    background-color: rgb(255, 255, 255);
+} */
+
 .radio-card input{
     opacity: 0;
     visibility: hidden;
@@ -2139,6 +2144,7 @@ z-index: -1;
     top: 0px;
     left: 0px;
     box-sizing: border-box;
+    
 }
 
 .radio-card-title{
@@ -2274,6 +2280,8 @@ z-index: -1;
     box-shadow: rgb(0 0 0 / 16%) 0px 10px 40px;
     border-radius: 3px !important;
     background: #f0f0f0;
+    /* z-index: 99999;
+    display: flex; */
 }
 
 .inner-modal{
@@ -2355,4 +2363,190 @@ z-index: -1;
     text-decoration: none;
     font-family: inherit;
     border: 0px;
+}
+
+.payment-header{
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-top: -15px;
+}
+
+.payment-saved-cards{
+    font-family: Lato, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: rgb(0, 158, 127);
+    display: block;
+}
+
+.btn-add-card{
+    font-family: Lato, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: rgb(0, 158, 127);
+    padding: 0px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    border-radius: 6px;
+    appearance: none;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-shrink: 0;
+    text-align: center;
+    height: 38px;
+    text-decoration: none;
+    border: 0px;
+    background-color: transparent;
+}
+
+.btn-add-card span{
+    margin-right: 6px;
+}
+
+.card-list-container{
+    margin-top: 15px;
+    margin-left: -10px;
+    margin-right: -10px;
+    position: relative;
+}
+
+.card-carousel{
+    display: flex;
+    position: relative;
+    align-items: center;
+    overflow: hidden;
+}
+
+.cards-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-direction: row;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform,transition;
+    display: flex;
+    position: relative;
+}
+
+.cards-list li{
+    list-style: none;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.payment-cardstyle{
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    padding: 0px 10px;
+    width: 100%;
+}
+
+.payment-cardstyle input{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+}
+
+.payment-cardstyle-wrapper{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    position: relative;
+    background-color: rgb(228, 244, 252);
+    padding: 15px 20px;
+    border-radius: 6px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(228, 244, 252);
+}
+
+.card-logo{
+    margin-bottom: 17px;
+    display: block;
+}
+
+.card-logo img{
+    max-width: 100%;
+    height: 14px;
+    display: block;
+}
+
+.CardNumTitle{
+    font-size: calc(10px);
+    font-weight: 400;
+    color: rgb(119, 121, 140);
+    display: block;
+    margin-bottom: 11px;
+    cursor: pointer;
+}
+
+.CardNumber{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 9px;
+    cursor: pointer;
+}
+
+.CardNumber span{
+    font-size: calc(14px);
+    font-weight: 700;
+    color: rgb(13, 17, 54);
+    line-height: 1.25;
+}
+
+.card-number{
+    font-size: 12px;
+    font-weight: 700;
+    color: rgb(13, 17, 54);
+    line-height: 1.25;
+}
+
+.cardstyle__Name{
+    font-size: 12px;
+    font-weight: 700;
+    color: rgb(13, 17, 54);
+    display: block;
+}
+
+.payment-cardstyle__DeleteButton{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border: 0px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    outline: 0px;
+    padding: 0px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 91, 96);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 9;
+    opacity: 0;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+
+.payment-cardstyle__DeleteButton svg{
+    display: block;
+    width: 8px;
+    height: auto;
 }
