@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import MyHead from './myHead';
 import Navbar from '../navbar/navbar';
-import Cart from '../checkout/cart';
-import EmptyCart from '../checkout/emptyCart';
-import CartButton from '../checkout/cartButton';
+import Cart from '../cart/cart';
+import EmptyCart from '../cart/emptyCart';
+import CartButton from '../cart/cartButton';
 import DemosButton from './demosButton';
 import {connect} from 'react-redux';
-import CartItemsWrapper from '../checkout/cartItemWrapper';;
-import CartItem from '../checkout/cartItem';
+import CartItemsWrapper from '../cart/cartItemWrapper';;
+import CartItem from '../cart/cartItem';
 
 class MainLayout extends Component {
 
