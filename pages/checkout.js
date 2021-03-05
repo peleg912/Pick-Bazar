@@ -3,6 +3,7 @@ import DeliveryAddress from '../components/checkout/deliveryAddress';
 import DeliverySchedule from '../components/checkout/deliverySchedule';
 import ContactNumber from '../components/checkout/contactNumber';
 import PaymentOption from '../components/checkout/paymentOption';
+import OrderSummary from '../components/checkout/orderSummary';
 
 const checkout = (props)=> {
     return(
@@ -16,9 +17,9 @@ const checkout = (props)=> {
                         <ContactNumber/>
                         <PaymentOption/>
                     </div>
-                    <div className="try">
+                    <OrderSummary/>
 
-                    </div>
+                    
                 </div>
             </div>
 

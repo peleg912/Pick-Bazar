@@ -1,6 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import {connect} from 'react-redux';
+import Link from 'next/link';
 
 class Cart extends Component{
     render(){
@@ -23,10 +24,20 @@ class Cart extends Component{
                       <span className="cart-PromoCode">
                       <button className="promo-btn">Do you have a voucher?</button>
                       </span>
-                      <button className="cart-Checkout-Btn">
-                          <a className="cart-btn-title">Checkout</a>
-                        <span className="cart-title-price">${this.props.totalPrice}</span>
-                            </button>
+
+                    {this.props.products.length > 0 ?
+                      <button className="cart-Checkout-Btn" type="button" >
+                          <Link href="/checkout" >
+                            <a className="cart-btn-title">Checkout</a>
+                          </Link>
+                           <span className="cart-title-price">${this.props.totalPrice}</span>
+                     </button>
+                     : 
+                     <button className="cart-Checkout-Btn" type="button" disabled>
+                       <a className="cart-btn-title">Checkout</a>
+                       <span className="cart-title-price">${this.props.totalPrice}</span>
+                   </button>}
+
                 </div>
             </div>
         </div>
@@ -39,7 +50,8 @@ class Cart extends Component{
 const mapStateToProps = (state)=> {
     return{
       totalPrice : state.totalPrice,
-      productsDistribution: state.productsDistribution
+      productsDistribution: state.productsDistribution,
+      products: state.products
     }
   }
 

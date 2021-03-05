@@ -99,6 +99,15 @@ const reducer = (state= null, action)=> {
                     ...state,
                     contacts: state.contacts.concat(newCard_)
                 }
+         case 'REMOVE_CREDIT_CARD':
+              const cardIndex__ = state.creditCards.findIndex(c=> c.num === action.id);
+              const newCreditCards = [...state.creditCards];
+              newCreditCards.splice(cardIndex__, 1);
+               return{
+                ...state,
+                creditCards: newCreditCards
+                 }
+
         default: return state;
     }
 }

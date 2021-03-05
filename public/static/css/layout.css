@@ -600,6 +600,11 @@ border-radius: 6px;
     padding-left: 30px;
 }
 
+.cart-Checkout-Btn a:hover{
+    color:rgb(255, 255, 255);
+    text-decoration: none;
+}
+
 .cart-btn-title{
     width: 100%;
     display: flex;
@@ -2259,10 +2264,292 @@ z-index: -1;
     box-sizing: border-box;
 }
 
-.try{
+.order-summary-container{
     width: 270px;
     flex-shrink: 0;
     padding-top: 20px;
+}
+
+.OrderInfo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.OrderInfo h3{
+    font-family: Lato, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: rgb(13, 17, 54);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.checkout-scrollbar{
+    height: 100%;
+    max-height: 390px;
+    padding-right: 15px;
+    position: relative;
+    overflow: visible!important;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    -webkit-box-align: start;
+    align-items: flex-start;
+}
+
+.checkout-scrollbar-a{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: inherit;
+    border: inherit;
+    border-color: transparent;
+    border-style: solid;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.checkout-scrollbar-b{
+    display: flex;
+    position: relative;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+    height: 200%;
+    width: 200%;
+    padding: inherit;
+    border: inherit;
+    margin: 0;
+}
+
+.checkout-scrollbar-c{
+    box-sizing: inherit!important;
+    width: inherit;
+    max-width: 1px;
+    position: relative;
+    max-height: 1px;
+    overflow: hidden;
+    z-index: -1;
+    padding: 0;
+    margin: 0;
+    pointer-events: none;
+    flex-grow: inherit;
+    flex-shrink: 0;
+    flex-basis: 0;
+}
+
+.checkout-scrollbar-d{
+    width: 1000%;
+    height: 1000%;
+    min-height: 1px;
+    min-width: 1px;
+    box-sizing: inherit;
+    display: block;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.checkout-scrollbar-e{
+    box-sizing: inherit;
+    max-height: 100%;
+    max-width: 100%;
+    pointer-events: none;
+}
+
+.checkout-scrollbar-f{
+    direction: inherit;
+    position: absolute;
+    overflow: visible;
+    padding: 0;
+    margin: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: auto!important;
+    height: auto!important;
+    z-index: 0;
+    box-sizing: inherit;
+}
+
+.checkout-scrollbar-g{
+    direction: inherit!important;
+    box-sizing: inherit!important;
+    resize: none!important;
+    outline: none!important;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.checkout-scrollbar-h{
+    direction: inherit;
+    box-sizing: border-box!important;
+    position: relative;
+    display: block;
+    visibility: visible;
+}
+
+.checkout-scrollbar-i{
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+}
+
+.checkout-scrollbar-j{
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    margin-bottom: 25px;
+}
+
+.Quantity{
+    font-family: Lato, sans-serif;
+    font-size: calc(14px);
+    font-weight: 700;
+    color: rgb(13, 17, 54);
+}
+
+.Multiplier{
+    font-family: Lato, sans-serif;
+    font-size: calc(14px);
+    font-weight: 400;
+    color: rgb(119, 121, 140);
+    margin: 0px 12px;
+}
+
+.checkout-twostyle__ItemInfo{
+    font-family: Lato, sans-serif;
+    font-size: calc(14px);
+    font-weight: 400;
+    color: rgb(119, 121, 140);
+    margin-right: 15px;
+}
+
+.checkout-twostyle__Price{
+    font-family: Lato, sans-serif;
+    font-size: calc(14px);
+    font-weight: 400;
+    color: rgb(119, 121, 140);
+    margin-left: auto;
+}
+
+.checkout-scrollbar-k{
+    right: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none!important;
+    transition: opacity .3s,visibility .3s,top .3s,right .3s,bottom .3s,left .3s;
+    bottom: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.checkout-scrollbar-l{
+    background: transparent;
+    pointer-events: none!important;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    padding: 0!important;
+    border: none!important;
+}
+
+.checkout-scrollbar-m{
+    opacity: 0!important;
+    pointer-events: none!important;
+    position: absolute;
+    height: 100%;
+}
+
+.checkout-scrollbar-n{
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    padding: 6px 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none!important;
+    transition: opacity .3s,visibility .3s,top .3s,right .3s,bottom .3s,left .3s;
+    right: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.checkout-scrollbar-o{
+    width: 100%;
+    min-height: 15px;
+    opacity: 0!important;
+    pointer-events: none!important;
+    position: absolute;
+}
+
+.checkout-scrollbar-p{
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .3s,visibility .3s,top .3s,right .3s,bottom .3s,left .3s;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.CalculationWrapper{
+    border-top: 1px solid rgb(230, 230, 230);
+    padding: 20px 15px 0px;
+    margin-top: 20px;
+}
+
+.checkout-twostyle__TextWrapper{
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.checkout__Text{
+    font-family: Lato, sans-serif;
+    font-size: calc(14px);
+    font-weight: 400;
+    color: rgb(119, 121, 140);
+    margin: 0px;
+}
+
+.checkout-twostyle__Bold{
+    font-family: Lato, sans-serif;
+    font-size: calc(14px);
+    font-weight: 700;
+    color: rgb(13, 17, 54);
+}
+
+.checkout-twostyle__Small{
+    font-family: Lato, sans-serif;
+    font-size: 11px;
 }
 
 .edit-modal{
@@ -2540,7 +2827,7 @@ z-index: -1;
     top: 10px;
     right: 20px;
     z-index: 9;
-    opacity: 0;
+    /* opacity: 0; */
     transition: all 0.2s ease-in-out 0s;
 }
 
@@ -2549,4 +2836,302 @@ z-index: -1;
     display: block;
     width: 8px;
     height: auto;
+}
+
+.carousel__ButtonPrev{
+    left: -10px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 158, 127);
+    padding: 0px;
+    border-radius: 20px;
+    box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px;
+    border: 0px;
+    outline: 0px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    z-index: 99;
+}
+
+.carousel__ButtonPrev svg{
+    color: rgb(0, 158, 127);
+    cursor: pointer;
+}
+
+.carousel__ButtonNext{
+    right: -10px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 158, 127);
+    padding: 0px;
+    border-radius: 20px;
+    box-shadow: rgb(0 0 0 / 16%) 0px 3px 6px;
+    border: 0px;
+    outline: 0px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    z-index: 99;
+}
+
+.carousel__ButtonNext svg{
+    color: rgb(0, 158, 127);
+    cursor: pointer;
+}
+
+.CouponBoxWrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.CouponBoxWrapper button{
+    font-family: Lato, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgb(0, 158, 127);
+    width: auto;
+    height: auto;
+    display: inline-block;
+    border: 0px;
+    outline: 0px;
+    box-shadow: none;
+    background-color: transparent;
+    padding: 0px;
+    cursor: pointer;
+}
+
+.CouponInputBox{
+    width: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.couponstyle__CouponBoxWrapper{
+    width: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.couponstyle__CouponBoxWrapper input{
+    width: 50%;
+    height: 48px;
+    margin-right: 20px;
+    background-color: rgb(247, 247, 247);
+    -webkit-box-flex: unset;
+    flex-grow: unset;
+    border-radius: 6px;
+    border: 1px solid rgb(230, 230, 230) !important;
+    font-size: calc(14px);
+    color: rgb(119, 121, 140);
+    padding: 0px 20px;
+    display: block;
+    appearance: none;
+    font-family: Lato, sans-serif;
+    line-height: inherit;
+    transition: all 0.25s ease 0s;
+}
+
+
+
+.couponstyle__CouponBoxWrapper button{
+    height: 48px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 158, 127);
+    transition: all 0.3s ease 0s;
+    border-radius: 6px;
+    appearance: none;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-shrink: 0;
+    text-align: center;
+    height: 38px;
+    text-decoration: none;
+    font-family: inherit;
+    border: 0px;
+    padding: 0px 30px;
+}
+
+.TermConditionText{
+    font-family: Lato, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgb(119, 121, 140);
+    line-height: 1.5;
+    margin-top: 30px;
+    display: block;
+}
+
+.TermConditionLink{
+    font-family: Lato, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgb(255, 91, 96);
+    margin-left: 5px;
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+.CheckoutSubmit{
+    margin-top: 25px;
+}
+
+.CheckoutSubmit button{
+    padding: 0px 30px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: not-allowed;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 158, 127);
+    transition: all 0.3s ease 0s;
+    border-radius: 6px;
+    appearance: none;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-shrink: 0;
+    text-align: center;
+    text-decoration: none;
+    font-family: inherit;
+    border: 0px;
+    height: 48px;
+}
+
+.CheckoutSubmit button:disabled{
+    color: rgb(144, 144, 144);
+    background-color: rgb(241, 241, 241);
+}
+
+.OrderReceivedWrapper{
+    background-color: rgb(247, 247, 247);
+    position: relative;
+    padding: 100px 0px 60px;
+    min-height: 100vh;
+}
+
+.OrderReceivedContainer{
+    width: 870px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(241, 241, 241);
+    padding: 60px;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.OrderReceivedContainer a{
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-family: Lato, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgb(119, 121, 140);
+    padding: 5px 15px;
+    height: 36px;
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 6px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transition: all 0.15s ease-in-out 0s;
+    text-decoration: none;
+}
+
+.order-receivedstyle__OrderInfo{
+    margin-bottom: 60px;
+}
+
+.order-receivedstyle__OrderInfo h2{
+    font-family: Poppins, sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    color: rgb(13, 17, 54);
+    line-height: 1;
+    margin-bottom: 32px;
+ 
+}
+
+.thank-you{
+    font-family: Lato, sans-serif;
+    font-size: 15px;
+    color: rgb(13, 17, 54);
+    font-weight: 400;
+    line-height: 1.2;
+    display: block;
+ 
+}
+
+.order-receivedstyle__InfoBlockWrapper{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.ckSHFg:first-child {
+    padding-left: 0px;
+    border-left: 0px;
+}
+
+.ckSHFg {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    padding: 0px 15px;
+    border-left: 1px solid rgb(241, 241, 241);
+}
+
+.kLpUPh{
+    margin-bottom: 10px;
+    font-family: Lato, sans-serif;
+    font-size: 15px;
+    color: rgb(13, 17, 54);
+    font-weight: 700;
+    line-height: 1.2;
+    display: block;
+   
+}
+
+.bdirGO{
+    color: rgb(66, 69, 97);
+    font-family: Lato, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.2;
+    display: block;
+    margin: 0;
+    
 }
