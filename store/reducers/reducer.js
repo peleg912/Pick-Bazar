@@ -84,6 +84,17 @@ const reducer = (state= null, action)=> {
                 addresses: state.addresses.concat(newCard)
             }
 
+        case 'EDIT_ADDRESS_CARD':
+            const updatedCard = action.cardData;
+            const cardIndex___ = state.addresses.findIndex(c=> c.id === updatedCard.id);
+            console.log(cardIndex___);
+            const newAddresses_ = [...state.addresses];
+            newAddresses_[cardIndex___] = updatedCard;
+            return{
+                ...state,
+                addresses: newAddresses_
+            }
+
          case 'REMOVE_CONTACT_CARD':
             const cardIndex_ = state.contacts.findIndex(c=> c.id === action.id);
             const newContacts = [...state.contacts];
@@ -99,6 +110,16 @@ const reducer = (state= null, action)=> {
                     ...state,
                     contacts: state.contacts.concat(newCard_)
                 }
+        case 'EDIT_CONTACT_CARD':
+            const updatedCard_ = action.cardData;
+            const cardIndex____ = state.contacts.findIndex(c=> c.id === updatedCard_.id);
+            const newContacts__ = [...state.contacts];
+            newContacts__[cardIndex____] = updatedCard_;
+            return{
+                ...state,
+                contacts: newContacts__
+            }
+
          case 'REMOVE_CREDIT_CARD':
               const cardIndex__ = state.creditCards.findIndex(c=> c.num === action.id);
               const newCreditCards = [...state.creditCards];
@@ -107,6 +128,12 @@ const reducer = (state= null, action)=> {
                 ...state,
                 creditCards: newCreditCards
                  }
+        case 'ADD_CREDIT_CARD':
+            const newCreditCard = {img:'x.jpg', num: action.cardNum}
+            return{
+                ...state,
+                creditCards: state.creditCards.concat(newCreditCard)
+            }
 
         default: return state;
     }

@@ -43,91 +43,94 @@ const orderReceived = ()=> {
     
        <div className="order-receivedstyle__OrderInfo">
            <h2>Order Details</h2>
-           <div className="order-receivedstyle__ListItem-co65po-9 iFsVag">
-             <div class="order-receivedstyle__ListTitle-co65po-10 fwRlvh">
-              <p class="order-receivedstyle__Text-co65po-6 kLpUPh">Total Item</p>
+
+           <div className="order-receivedstyle__ListItem">
+             <div className="order-receivedstyle__ListTitle">
+                <p className="order-receivedstyle__Text">Total Item</p>
              </div>
 
-            <div class="order-receivedstyle__ListDes-co65po-11 hImmOO">
-                <p class="order-receivedstyle__Text-co65po-6 bdirGO">6 Items</p>
+            <div className="order-receivedstyle__ListDes">
+                <p className="bdirGO">6 Items</p>
             </div>
 
-        </div>
+           </div>
         
-        <div class="order-receivedstyle__ListItem-co65po-9 iFsVag">
-
-          <div class="order-receivedstyle__ListTitle-co65po-10 fwRlvh">
-            <p class="order-receivedstyle__Text-co65po-6 kLpUPh">Order Time</p>
+        <div className="order-receivedstyle__ListItem">
+          <div className="order-receivedstyle__ListTitle">
+            <p className="order-receivedstyle__Text">Order Time</p>
           </div>
 
-          <div class="order-receivedstyle__ListDes-co65po-11 hImmOO">
-            <p class="order-receivedstyle__Text-co65po-6 bdirGO">1.00pm 10/12/19</p>
+          <div className="order-receivedstyle__ListDes">
+            <p className="bdirGO">1.00pm 10/12/19</p>
          </div>
          
         </div>
          
-         <div class="order-receivedstyle__ListItem-co65po-9 iFsVag">
-             <div class="order-receivedstyle__ListTitle-co65po-10 fwRlvh">
-                <p class="order-receivedstyle__Text-co65po-6 kLpUPh">Delivery Time</p>
+         <div className="order-receivedstyle__ListItem">
+             <div className="order-receivedstyle__ListTitle">
+                <p className="order-receivedstyle__Text">Delivery Time</p>
             </div>
 
-            <div class="order-receivedstyle__ListDes-co65po-11 hImmOO">
-                <p class="order-receivedstyle__Text-co65po-6 bdirGO">90 Minute Express Delivery</p>
+            <div className="order-receivedstyle__ListDes">
+                <p className="bdirGO">90 Minute Express Delivery</p>
             </div>
         </div>
         
-        <div class="order-receivedstyle__ListItem-co65po-9 iFsVag">
-            <div class="order-receivedstyle__ListTitle-co65po-10 fwRlvh">
-                <p class="order-receivedstyle__Text-co65po-6 kLpUPh">Delivery Location</p>
+        <div className="order-receivedstyle__ListItem">
+            <div className="order-receivedstyle__ListTitle">
+                <p className="order-receivedstyle__Text">Delivery Location</p>
             </div>
             
-            <div class="order-receivedstyle__ListDes-co65po-11 hImmOO">
-                <p class="order-receivedstyle__Text-co65po-6 bdirGO">1st Floor, House 149, Road-22, Mohakhali DOHS, Dhaka - North</p>
+            <div className="order-receivedstyle__ListDes">
+                <p className="bdirGO">1st Floor, House 149, Road-22, Mohakhali DOHS, Dhaka - North</p>
             </div>
         </div>
 
     </div>
 
-    <div class="order-receivedstyle__TotalAmount-co65po-4 AKfvo">
-        <h2 class="order-receivedstyle__BlockTitle-co65po-5 dgVukO">Total Amount</h2>
-            <div class="order-receivedstyle__ListItem-co65po-9 iFsVag">
-                <div class="order-receivedstyle__ListTitle-co65po-10 fwRlvh">
-                    <p class="order-receivedstyle__Text-co65po-6 kLpUPh">Sub Total</p>
+
+
+    <div className="order-receivedstyle__TotalAmount">
+        <h2 className="dgVukO">Total Amount</h2>
+
+            <div className="order-receivedstyle__ListItem">
+                <div className="order-receivedstyle__ListTitle">
+                    <p className="order-receivedstyle__Text">Sub Total</p>
                 </div>
                 
-                <div class="order-receivedstyle__ListDes-co65po-11 hImmOO">
-                    <p class="order-receivedstyle__Text-co65po-6 bdirGO">$10,864.00</p>
+                <div className="order-receivedstyle__ListDes">
+                    <p className="bdirGO">$10,864.00</p>
                 </div>
             </div>
-        <div class="order-receivedstyle__ListItem-co65po-9 iFsVag">
-            
-        <div class="order-receivedstyle__ListTitle-co65po-10 fwRlvh">
-            <p class="order-receivedstyle__Text-co65po-6 kLpUPh">Payment Method</p>
-        </div>
-        
-        <div class="order-receivedstyle__ListDes-co65po-11 hImmOO">
-            <p class="order-receivedstyle__Text-co65po-6 bdirGO">Cash On Delivery</p>
-        </div>
-        
-    </div>
-    
-    <div class="order-receivedstyle__ListItem-co65po-9 iFsVag">
-        <div class="order-receivedstyle__ListTitle-co65po-10 fwRlvh">
-            <p class="order-receivedstyle__Text-co65po-6 kLpUPh">Cash on delivery</p>
-        </div>
-        
-        <div class="order-receivedstyle__ListDes-co65po-11 hImmOO">
-          <p class="order-receivedstyle__Text-co65po-6 bdirGO">10</p>
-        </div>
-    </div>
-    
-    <div class="order-receivedstyle__ListItem-co65po-9 iFsVag">
-        <div class="order-receivedstyle__ListTitle-co65po-10 fwRlvh">
-            <p class="order-receivedstyle__Text-co65po-6 kLpUPh">Total</p>
-        </div>
 
-        <div class="order-receivedstyle__ListDes-co65po-11 hImmOO">
-            <p class="order-receivedstyle__Text-co65po-6 bdirGO">$10,874.00</p>
+            <div className="order-receivedstyle__ListItem">
+                <div className="order-receivedstyle__ListTitle">
+                    <p className="order-receivedstyle__Text">Payment Method</p>
+              </div>
+        
+            <div className="order-receivedstyle__ListDes">
+                <p className="bdirGO">Cash On Delivery</p>
+            </div>
+        
+       </div>
+    
+       <div className="order-receivedstyle__ListItem">
+            <div className="order-receivedstyle__ListTitle">
+                 <p className="order-receivedstyle__Text">Cash on delivery</p>
+            </div>
+        
+        <div className="order-receivedstyle__ListDes">
+          <p className="bdirGO">10</p>
+        </div>
+    </div>
+    
+    <div className="order-receivedstyle__ListItem">
+         <div className="order-receivedstyle__ListTitle">
+            <p className="order-receivedstyle__Text">Total</p>
+         </div>
+
+        <div className="order-receivedstyle__ListDes">
+            <p className="bdirGO">$10,874.00</p>
         </div>
     </div>
 

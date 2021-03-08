@@ -1,25 +1,51 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
 
-const addAddressModal = (props)=> {
+class addAddressModal extends Component{
 
-    const addAddress = ()=> {
-        address = {
-            id: '_' + Math.random().toString(36).substr(2, 9),
-            title: "Parents",
-            address: "Nahal Dalia 33, Modiin"
-        }
-
-        props.onAddingAddressCard(address);
+    state = {
+        title: "",
+        address: ""
     }
 
+    titleHandler = (event)=> {
+        this.setState({title: event.target.value})
+    }
+
+    addressHandler = (event)=> {
+        this.setState({address: event.target.value})
+    }
+
+   addAddress = async (event)=> {
+    await event.preventDefault();
+
+
+    const address = {
+        id: '_' + Math.random().toString(36).substr(2, 9),
+        title: this.state.title,
+        address: this.state.address
+    }
+
+    if (address.address === ""|| address.title === ""){
+        await this.setState({title:"", address:""});
+        return;
+    }
+
+    await this.props.onAddingAddressCard(address);
+    await this.setState({title:"", address:""});
+    }
+
+
+    render(){
     return(
+
     <div className="modal fade edit-modal" id="addAddressModal" tabIndex="-1" aria-hidden="true">
 
      <div className="inner-modal modal-dialog">
 
-            <form style={{boxSizing: 'border-box'}} role="form" method="POST" action="" className="modal-body">
+        <div className="modal-content">
+            <form style={{boxSizing: 'border-box'}} role="form" >
                 
                <div  className="address-cardstyle modal-header modal-header">
                 Add New Address
@@ -28,30 +54,47 @@ const addAddressModal = (props)=> {
 
             <div className="address-cardstyle-Field-Wrapper">
               <div className="text-field">
-                <input className="form-control" id="name" type="text" placeholder="Enter Title"  value=""/>
+                <input 
+                className="form-control"
+                id="title" 
+                type="text"
+                placeholder="Enter Title"
+                onChange={(event)=>this.titleHandler(event)}
+                value={this.state.title} />
                </div>
             </div>
 
              <div className="address-cardstyle-Field-Wrapper">
                 <div className="text-field">
-                    <textarea id="info" placeholder="Enter Address" className="form-control"></textarea>
+                    <textarea
+                     id="info"
+                     placeholder="Enter Address"
+                     className="form-control"
+                     onChange={(event)=>this.addressHandler(event)}
+                     value={this.state.address}>
+                     </textarea>
                  </div>
              </div>
 
 
                 <button
-                onClick={addAddress}
+                onClick={(event)=>this.addAddress(event)}
                 type="submit" 
+                data-bs-dismiss="modal"
                 className="btn-edit-modal"
+                id="modal"
                 style={{width: '100%', height: '44px'}}>
                     Save Address
                 </button>
 
             </form>
+            </div>
         </div>
 
      </div>
     )
+  }  
+
 };
 
 const mapDisaptchToProps = (dispatch)=> {
