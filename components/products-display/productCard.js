@@ -15,15 +15,7 @@ class productCard extends Component{
         productId: ""
     };
 
-    // calcAmount = ()=> {
-    //     if(this.props.productsDistribution.length < 1){
-    //         return 'here';
-    //     }else{
-    //         const _i = this.props.productsDistribution.findIndex(p=> p.productTitle === this.state.currentProduct.title);
-    //         console.log(_i);
-    //         return this.props.productsDistribution[_i].amount;
-    //     }
-    // }
+  
     
     traceProduct = (title)=> {
         const product = this.props.products.find(p=> p.title === title);
@@ -32,7 +24,7 @@ class productCard extends Component{
 
     firstCountHandler = async (event)=> {
         event.preventDefault();
-       await this.setState((prevState)=>{ return {
+        await this.setState((prevState)=>{ return {
             touched: true, 
             counter: prevState.counter + 1, 
             productId : '_' + Math.random().toString(36).substr(2, 9)}
@@ -70,7 +62,21 @@ class productCard extends Component{
     }
 
     
+
+    getCount = ()=> {
+            this.props.productsDistribution.forEach(p => {
+                if (p.productTitle === this.props.title){
+                    return (
+                     <span className="counter"> {p.amount} </span>
+                    )
+                }
+            });
+        
+    }
+
+    
     render(){
+        const c = this.getCount();
         return(
             <div className="pro-card-container">
             <div className="pro-card">
@@ -96,8 +102,11 @@ class productCard extends Component{
             <div className="change-card">
                 <button className="change-btn" onClick={(event)=>this.minusHandler(event)}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="2px" viewBox="0 0 12 2"><rect data-name="Rectangle 522" width="12" height="2" rx="1" fill="currentColor">
-                        </rect></svg></button>
+                        </rect></svg>
+                </button>
+
                 <span className="counter"> {this.state.counter} </span>
+                {/* {c} */}
                 <button className="change-btn" onClick={(event)=>this.plusHandler(event)}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 12 12">
                         <g id="Group_3351" data-name="Group 3351" transform="translate(-1367 -190)">

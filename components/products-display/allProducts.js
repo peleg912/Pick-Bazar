@@ -6,14 +6,14 @@ import Link from 'next/link';
 const allProducts = (props)=> {
     return(
         <div className="ad-container" >
-        <div className="container">
-            <div className="row img-banner">
+         <div className="container">
+            <div className="bla">
                 {vegs.map(v=>(
-                <div className="col-3" key={v.title}>
+                <div key={v.title}>
                     <Link 
                      as={`/products/${v.title}`}
                      href={{
-                    pathname: '/products',
+                     pathname: '/products',
                      query: {
                      product: v.title
                         }}}>
@@ -24,7 +24,7 @@ const allProducts = (props)=> {
                 </div>
                 ))}
             </div>
-        </div>
+          </div>
         </div>
     )
 }

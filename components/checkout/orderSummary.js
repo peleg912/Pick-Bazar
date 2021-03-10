@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import SummaryProduct from './summaryProduct';
+import EmptyCheckout from './emptyCheckout';
 
 const orderSummary = (props)=> {
     return(
@@ -11,6 +12,8 @@ const orderSummary = (props)=> {
                     <div className="OrderInfo">
                        <h3 >Your Order</h3>
 
+                       {props.products.length < 1 ? <EmptyCheckout/> :
+                    <>
                      <div className="checkout-scrollbar">
                    
                       <div className="checkout-scrollbar-a">
@@ -84,9 +87,11 @@ const orderSummary = (props)=> {
                         </div>
                         
                         </div>
+                        </>}
                     </div>
 
                 </div>
+                      
             </div>
         </div>
 
@@ -96,7 +101,8 @@ const orderSummary = (props)=> {
 const mapStateToProps = (state)=> {
     return{
         productsDist: state.productsDistribution,
-        totalPrice: state.totalPrice
+        totalPrice: state.totalPrice,
+        products: state.products
     }
 }
 

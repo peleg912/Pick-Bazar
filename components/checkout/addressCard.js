@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 const addressCard = (props)=> {
   
     return(
-        <label htmlFor="address-23423" className="radio-card">
+        <label htmlFor="address-23423" className="radio-card" onClick={()=>props.onUpdateAddress(props.address)}>
 
         <input  type="radio" id="address-23423" name="address" value="27 Street, 2569 Heritage Road Visalia, CA 93291"/>
          <span className="radio-card-title">{props.dest}</span>
@@ -27,8 +27,11 @@ const addressCard = (props)=> {
 
 const mapDispatchToProps=(dispatch)=> {
   return{
-      onRemovingAddressCard: (cardId)=> dispatch({type:'REMOVE_ADDRESS_CARD', id: cardId})
+      onRemovingAddressCard: (cardId)=> dispatch({type:'REMOVE_ADDRESS_CARD', id: cardId}),
+      onUpdateAddress: (address)=> dispatch({type: 'UPDATE_ADDRESS', data: address})
   }
 };
+
+
 
 export default connect(null, mapDispatchToProps)(addressCard);

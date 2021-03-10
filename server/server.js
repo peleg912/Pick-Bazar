@@ -10,7 +10,7 @@ const handle = app.getRequestHandler();
 app.prepare()
  .then(()=> {
     const server = express();
-    server.use(bodyParser.json());
+    
 
     server.get('/:category', (req, res)=> {
         const actualPage = "/";
@@ -21,6 +21,12 @@ app.prepare()
     server.get('/products/:product', (req, res)=> {
         const actualPage = "/products";
         const queryParams = {product: req.params.product};
+        app.render(req, res, actualPage, queryParams);
+    });
+
+    server.get(`/?search=${'*'}`, (req, res)=> {
+        const actualPage = "/";
+        const queryParams = {search: req.params.search};
         app.render(req, res, actualPage, queryParams);
     });
 

@@ -1,7 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
+import {connect} from 'react-redux';
 
-const orderReceived = ()=> {
+const orderReceived = (props)=> {
+
+    const getDate = ()=> {
+        return new Date();
+    }
 
     return(
 
@@ -30,7 +35,7 @@ const orderReceived = ()=> {
             
             <div className="ckSHFg">
                 <p className="kLpUPh">Total</p>
-                <p className="bdirGO">$10,944.00</p>
+                <p className="bdirGO">${props.totalPrice}</p>
             </div>
 
             <div className="ckSHFg">
@@ -50,7 +55,7 @@ const orderReceived = ()=> {
              </div>
 
             <div className="order-receivedstyle__ListDes">
-                <p className="bdirGO">6 Items</p>
+                <p className="bdirGO">{props.products.length} Items</p>
             </div>
 
            </div>
@@ -72,7 +77,7 @@ const orderReceived = ()=> {
             </div>
 
             <div className="order-receivedstyle__ListDes">
-                <p className="bdirGO">90 Minute Express Delivery</p>
+                <p className="bdirGO">{props.orderSummary.time}</p>
             </div>
         </div>
         
@@ -82,7 +87,7 @@ const orderReceived = ()=> {
             </div>
             
             <div className="order-receivedstyle__ListDes">
-                <p className="bdirGO">1st Floor, House 149, Road-22, Mohakhali DOHS, Dhaka - North</p>
+                <p className="bdirGO">{props.orderSummary.address}</p>
             </div>
         </div>
 
@@ -99,7 +104,7 @@ const orderReceived = ()=> {
                 </div>
                 
                 <div className="order-receivedstyle__ListDes">
-                    <p className="bdirGO">$10,864.00</p>
+                    <p className="bdirGO">${props.totalPrice}</p>
                 </div>
             </div>
 
@@ -130,7 +135,7 @@ const orderReceived = ()=> {
          </div>
 
         <div className="order-receivedstyle__ListDes">
-            <p className="bdirGO">$10,874.00</p>
+            <p className="bdirGO">$${props.totalPrice}</p>
         </div>
     </div>
 
@@ -142,4 +147,12 @@ const orderReceived = ()=> {
     )
 }
 
-export default orderReceived;
+const mapStateToProps = (state)=> {
+    return{
+        totalPrice: state.totalPrice,
+        products: state.products,
+        orderSummary: state.orderSum
+    }
+}
+
+export default connect(mapStateToProps)(orderReceived);

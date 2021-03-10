@@ -9,22 +9,23 @@ class MyApp extends App {
 
   static async getInitialProps({ Component, ctx}) {
     let pageProps = {};
-    
+   
     if (Component.getInitialProps) {
       pageProps = await Component.getInitialProps(ctx);
     }
 
+    const path = ctx.asPath;
 
-    return { pageProps, categories};
+    return { pageProps, categories, path};
   }
 
   render() {
-    const { Component, pageProps, categories, reduxStore} = this.props;
+    const { Component, pageProps, categories, reduxStore, path} = this.props;
    
     return (
      <Provider store={reduxStore}>
-       <MainLayout>
-         <Component {...pageProps} categories={categories} />
+       <MainLayout path={path}>
+         <Component {...pageProps} categories={categories} path={path}/>
        </MainLayout>
      </Provider>
     );

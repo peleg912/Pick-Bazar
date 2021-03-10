@@ -1,12 +1,9 @@
 import React from 'react';
-import Link from 'next/link';
-import {connect} from 'react-redux';
-
 
 const categoryCard = (props)=> {
     return(
         <>
-        <div className="Cat-Card-Container"  onClick={props.clicked}>
+        <div className="Cat-Card-Container" onClick={props.clicked}>
             <div className="Cat-Card">
                 <img 
                 style={{height:'40px',width:'auto'}}
@@ -20,5 +17,5 @@ const categoryCard = (props)=> {
     )
 }
 
-export default connect()(categoryCard);
+export default categoryCard;
 

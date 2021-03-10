@@ -3,6 +3,9 @@ import { Component } from 'react';
 import GroceryMenu from './groceryMenu';
 import LanguageMenu from './languageMenu';
 import Link from 'next/link';
+import allProducts from '../../utills/products/allProducts';
+import {connect} from 'react-redux';
+
 
 class Navbar extends Component{
 
@@ -11,7 +14,40 @@ class Navbar extends Component{
     languageMenu: false,
     searchTerm: ''
   }
+
   
+  componentDidUpdate(){
+    // console.log(this.props.path);
+    // if(this.props.path === '/help' || '/checkout' || "/order-received"){
+    //   document.getElementById("myForm").setAttribute("hidden", "true");
+    // } ;
+
+    // if(this.props.path !== '/help' || '/checkout' || "/order-received"){
+    //   document.getElementById("myForm").removeAttribute("hidden");
+    // }
+
+   
+  }
+
+  search = ()=>{ 
+    let searchResaults = [];
+    if (this.state.searchTerm === ""){
+      return;
+    }
+
+    allProducts.forEach(obj=>{
+      obj.data.forEach(p=> {
+        if (p.title.toLowerCase().includes(this.state.searchTerm)){
+          searchResaults.push(p);
+        }
+      })
+    });
+
+    this.props.onSavingResults(this.state.searchTerm, searchResaults);
+    this.setState({searchTerm: ""});
+  }
+
+
 
  GroceryMenuHandler = ()=> {
       const boolean = this.state.groceryMenu;
@@ -24,7 +60,7 @@ class Navbar extends Component{
 }
 
 searchBarHandler = (event)=> {
-  this.setState({searchTerm: event.target.value})
+  this.setState({searchTerm: event.target.value});
 }
 
     render(){
@@ -68,18 +104,29 @@ searchBarHandler = (event)=> {
           </div>
          </div>
 
-           <form className="header-search" >
-             <svg xmlns="http://www.w3.org/2000/svg" width="17px" height="18px" viewBox="0 0 17.048 18" style={{boxSizing: 'border-box', overflow: 'hidden',marginLeft:'16px', marginRight:'16px', color:'#212121'}}><path id="Path_142" data-name="Path 142" d="M380.321,383.992l3.225,3.218c.167.167.341.329.5.506a.894.894,0,1,1-1.286,1.238c-1.087-1.067-2.179-2.131-3.227-3.236a.924.924,0,0,0-1.325-.222,7.509,7.509,0,1,1-3.3-14.207,7.532,7.532,0,0,1,6,11.936C380.736,383.462,380.552,383.685,380.321,383.992Zm-5.537.521a5.707,5.707,0,1,0-5.675-5.72A5.675,5.675,0,0,0,374.784,384.513Z" transform="translate(-367.297 -371.285)" fill="currentColor"></path></svg>
+           <form className="header-search" id="myForm">
+             <div onClick={this.search} style={{cursor: "pointer"}}>
+               <Link  as={`/?search=${this.state.searchTerm}`}
+                     href={{
+                      pathname: '/',
+                       query: {
+                       search: this.state.searchTerm
+                     }}}>
+                 <a>
+                  <svg  xmlns="http://www.w3.org/2000/svg" width="17px" height="18px" viewBox="0 0 17.048 18" style={{boxSizing: 'border-box', overflow: 'hidden',marginLeft:'16px', marginRight:'16px', color:'#212121'}}><path id="Path_142" data-name="Path 142" d="M380.321,383.992l3.225,3.218c.167.167.341.329.5.506a.894.894,0,1,1-1.286,1.238c-1.087-1.067-2.179-2.131-3.227-3.236a.924.924,0,0,0-1.325-.222,7.509,7.509,0,1,1-3.3-14.207,7.532,7.532,0,0,1,6,11.936C380.736,383.462,380.552,383.685,380.321,383.992Zm-5.537.521a5.707,5.707,0,1,0-5.675-5.72A5.675,5.675,0,0,0,374.784,384.513Z" transform="translate(-367.297 -371.285)" fill="currentColor"></path></svg>
+                 </a>
+               </Link>
+             </div>
              <input
-            //  type="search" 
+             type="search" 
              value={this.state.searchTerm} 
-            //  name="search" 
+             name="search" 
              placeholder="Search your products from here" 
              className="header-input"
              onChange={(event)=>this.searchBarHandler(event)}/>
             </form>
 
-          <div className="header-right-menu">
+          <div className="header-right-menu" >
             <div className="menu-item">
               <a className="" style={{display:'flex',alignItems: 'center'}} href="#">
              <span className="label">Offer</span>
@@ -122,4 +169,12 @@ searchBarHandler = (event)=> {
     }
 }
 
-export default Navbar;
+const mapDispatchToProps = (dispatch)=> {
+  return{
+    onSavingResults: (term ,array)=> dispatch({type: "ADD_SEARCH_RES",search: term, data: array})
+  }
+}
+
+
+
+export default connect(null, mapDispatchToProps)(Navbar);

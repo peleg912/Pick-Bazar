@@ -10,19 +10,19 @@ class SideBar extends Component{
     render(){
         return(
             <div className="container Cat-Grid-Container ">
-            <div className="row">
+            <div className="try">
                 {categories.map(cat=> {
                     return(
-                          <div className="col-lg-6 " key={cat.name} onClick={()=>this.props.onUpdateCategory(cat.name)}>
-                        <Link
-                        as={`/${cat.name}`}
-                        href={{
-                            pathname: '/',
-                            query: {
-                                category: cat.name
-                            }
-                          }}>
-                              <a>
+                          <div key={cat.name} onClick={()=>this.props.onUpdateCategory(cat.name)}>
+                           <Link
+                            as={`/${cat.name}`}
+                            href={{
+                                pathname: '/',
+                                query: {
+                                    category: cat.name
+                                }
+                              }}>
+                              <a style={{textDecoration: 'none'}}>
                             <CategoryCard  catName={cat.name} catImg={cat.img} clicked={this.props.clicked} />
                             </a>
                        </Link>
@@ -32,7 +32,7 @@ class SideBar extends Component{
                     )
                 })}
            
-           </div>
+              </div>
            </div>
               
         )

@@ -5,19 +5,18 @@ import { Component } from 'react';
 import {connect} from 'react-redux';
 import Link from 'next/link';
 
-class CategoryProducts extends Component{
+class SearchedProducts extends Component{
 
-    categoryHandler = ()=> {
-      const categoryObj = allProducts.find(obj=> obj.category === this.props.reqCategory);
-      return categoryObj.data.map(product=> (
+  searchHandler = ()=> {
+      return this.props.searchRes.res.map(product=> (
         <div key={product.title}>
-             <Link 
+               <Link
                      as={`/products/${product.title}`}
                      href={{
-                    pathname: '/products',
-                     query: {
-                     product: product.title
-                        }}}>
+                      pathname: '/products',
+                       query: {
+                       product: product.title
+                          }}}>
                       <a>
           <ProductCard img={product.img} title={product.title} price={product.price}/>
           </a>
@@ -31,10 +30,10 @@ class CategoryProducts extends Component{
 
     render(){
         return(
-          <div className="ad-container" >
-          <div className="container">
-             <div className="bla">
-              {this.categoryHandler()}
+            <div className="ad-container" >
+             <div className="container">
+               <div className="bla">
+              {this.searchHandler()}
             </div>
         </div>
         </div>
@@ -46,8 +45,9 @@ class CategoryProducts extends Component{
 
 const mapStateToProps = (state)=> {
   return{
-    reqCategory : state.currentCategory
+    reqCategory : state.currentCategory,
+    searchRes: state.searchRes
   }
 }
 
-export default connect(mapStateToProps)(CategoryProducts);
+export default connect(mapStateToProps)(SearchedProducts);

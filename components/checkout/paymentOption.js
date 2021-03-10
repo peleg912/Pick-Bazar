@@ -72,7 +72,7 @@ const paymentOption = (props)=> {
                           <button type="button" style={{width:'100%'}} disabled={props.products.length < 1} >
                            Proceed to Checkout
                           </button> 
-                        </a>
+                          </a>
                         </Link>
 
                 </div>

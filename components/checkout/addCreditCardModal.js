@@ -6,11 +6,30 @@ import Link from 'next/link';
 class addCreditCardModal extends Component{
  
   state= {
-    num: ""
+    num: "",
+    expDate: "",
+    csv: ""
   }
 
   numHandler = (event)=> {
     this.setState({num: event.target.value});
+  }
+
+  dateHandler = (event)=> {
+    this.setState({expDate: event.target.value});
+  }
+
+  csvHandler = (event)=> {
+    this.setState({csv: event.target.value});
+  }
+
+
+  next = ()=> {
+    return(
+      <Link href="/order-received">
+      <a></a>
+      </Link>
+    )
   }
 
   // payNow = async (event)=> {
@@ -52,9 +71,11 @@ class addCreditCardModal extends Component{
                 <div className="text-field">
                   <input
                    className="form-control"
-                   id="name" type="date"
-                   placeholder="Enter card validity"
-                    value=""/>
+                   id="name"
+                   type="date"
+                   placeholder="Enter expiry date"
+                   value={this.state.expDate}
+                   onChange={(event)=>this.dateHandler(event)}/>
                  </div>
               </div>
   
@@ -62,23 +83,24 @@ class addCreditCardModal extends Component{
                 <div className="text-field">
                   <input
                    className="form-control"
-                   id="name" type="number" 
+                   id="name" 
+                   type="text" 
                    placeholder="Enter csv"  
-                   value=""/>
+                   value={this.state.csv}
+                   onChange={(event)=>this.csvHandler(event)}/>
                  </div>
               </div>
   
-                <Link href="/order-received">
-                  <a style={{textDecoration:"none"}}>
-                    <button
+                    {/* <Link href="/order-received">
+                        <a style={{textDecoration:"none"}}> */}
+                     <button
                     type="submit" 
                     className="btn-edit-modal"
-                    style={{width: '100%', height: '44px'}}
-                    >
+                    style={{width: '100%', height: '44px'}}>
                         Pay Now
-                    </button>
-                  </a>
-                </Link>
+                     </button>
+                        {/* </a>
+                      </Link> */}
                   
   
               </form>

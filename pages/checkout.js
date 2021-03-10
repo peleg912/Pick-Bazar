@@ -4,6 +4,7 @@ import DeliverySchedule from '../components/checkout/deliverySchedule';
 import ContactNumber from '../components/checkout/contactNumber';
 import PaymentOption from '../components/checkout/paymentOption';
 import OrderSummary from '../components/checkout/orderSummary';
+import {connect} from 'react-redux';
 
 const checkout = (props)=> {
     return(
@@ -27,4 +28,12 @@ const checkout = (props)=> {
     )
 };
 
-export default checkout;
+const mapStateToProps = (state)=> {
+   return{
+        products: state.products
+    }
+}
+
+
+
+export default connect(mapStateToProps)(checkout);

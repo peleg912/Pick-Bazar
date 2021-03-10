@@ -134,7 +134,28 @@ const reducer = (state= null, action)=> {
                 ...state,
                 creditCards: state.creditCards.concat(newCreditCard)
             }
-
+        case 'UPDATE_ADDRESS':
+            const orederSum_ = {...state.orderSum};
+            orederSum_.address = action.data;
+            return{
+                ...state,
+                orderSum: orederSum_
+            }
+        case 'UPDATE_TIME':
+                const orederSum__ = {...state.orderSum};
+                orederSum__.time = action.data;
+                return{
+                    ...state,
+                    orderSum: orederSum__
+                }
+        case "ADD_SEARCH_RES":
+            return{
+                ...state,
+                searchRes:{
+                    searchTerm : action.search,
+                    res: action.data
+                }
+            }
         default: return state;
     }
 }
