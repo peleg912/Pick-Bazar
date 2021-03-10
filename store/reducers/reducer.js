@@ -1,13 +1,3 @@
-
- const updateObject = (oldObj, newProps)=> {
-    return{
-        ...oldObj,
-        ...newProps
-    }
- 
- }
-
-
 const reducer = (state= null, action)=> {
     switch (action.type){
         case 'ADD_PRODUCT':
@@ -33,7 +23,7 @@ const reducer = (state= null, action)=> {
                 ...state,
                 products: state.products.concat(newProduct),
                 totalPrice: newPrice,
-                productsDistribution: newDistribution
+                productsDistribution: newDistribution,
             }
 
         case 'REMOVE_PRODUCT':
@@ -56,10 +46,13 @@ const reducer = (state= null, action)=> {
             productsDistribution: _newDistribution
         }
 
-        case 'CLEAR_PRODUCTS':
+        case 'CLEAR_PRODUCT':
+            const title = action.title;
             return{
                 ...state,
-                products: []
+                products: state.products.filter(p=> p.title !== title),
+                productsDistribution: state.productsDistribution.filter(p=> p.productTitle !== title),
+                totalPrice: (state.totalPrice - action.priceToReduce)
             }
 
         case 'UPDATE_CATEGORY':
@@ -155,6 +148,11 @@ const reducer = (state= null, action)=> {
                     searchTerm : action.search,
                     res: action.data
                 }
+            }
+        case "CHANGE_LANG":
+            return{
+                ...state,
+                currentLang: action.language
             }
         default: return state;
     }

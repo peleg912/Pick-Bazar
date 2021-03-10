@@ -13,6 +13,8 @@ const cartItem = (props)=> {
         await props.onRemovingProduct(product);
     }
 
+ 
+
     const traceProduct = (title)=> {
         const product = props.products.find(p=> p.title === title);
         return product;
@@ -38,10 +40,14 @@ const cartItem = (props)=> {
               <div className="cart-item-info">
               <span className="cart-item-name">{props.title}</span>
             <span className="cart-item-price">${props.price}</span>
-            <span className="cart-item-amount">X {props.amount} </span>
+            <span
+             className="cart-item-amount">X {props.amount} </span>
                 </div>
               <span className="cart-item-total">$ {props.amount * props.price}</span>
-                 <button className="cart-item-remove-btn">
+
+                 <button
+                  className="cart-item-remove-btn"
+                  onClick={()=>props.onClearingProduct(props.title,(props.amount * props.price))}>
                      <svg style={{cursor: 'pointer',color: 'rgba(0, 0, 0, 0.25)', overflow: 'hidden'}} xmlns="http://www.w3.org/2000/svg" width="10.003" height="10" viewBox="0 0 10.003 10"><path data-name="_ionicons_svg_ios-close (5)" d="M166.686,165.55l3.573-3.573a.837.837,0,0,0-1.184-1.184l-3.573,3.573-3.573-3.573a.837.837,0,1,0-1.184,1.184l3.573,3.573-3.573,3.573a.837.837,0,0,0,1.184,1.184l3.573-3.573,3.573,3.573a.837.837,0,0,0,1.184-1.184Z" transform="translate(-160.5 -160.55)" fill="currentColor"></path></svg>
                  </button>
 </div>
@@ -59,6 +65,7 @@ const mapDispatchToProps = (dispatch)=> {
     return{
         onAddingProduct: (productData) => dispatch({type: 'ADD_PRODUCT', product :productData}),
         onRemovingProduct : (productData) => dispatch({type: 'REMOVE_PRODUCT', product :productData}),
+        onClearingProduct: (productTitle, totalPriceToReduce) => dispatch({type:'CLEAR_PRODUCT', title: productTitle, priceToReduce: totalPriceToReduce})
     }
 }
 

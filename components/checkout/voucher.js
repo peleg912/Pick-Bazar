@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import translation from '../../utills/translation';
 
 class Voucher extends Component{
 
@@ -18,7 +20,7 @@ class Voucher extends Component{
         return(
         <div className="CouponBoxWrapper" onClick={this.openVoucher}>
             {! this.state.voucherInputOpen ?
-            <button className="checkout-twostyle__HaveCoupon-sc-9tdt16-14 eSMQhK">Do you have a voucher?</button>
+            <button className="checkout-twostyle__HaveCoupon-sc-9tdt16-14 eSMQhK">{translation[this.props.lang].checkout.haveVoucher}</button>
             :
             <div className="CouponInputBox">
                 <div className="couponstyle__CouponBoxWrapper">
@@ -35,7 +37,11 @@ class Voucher extends Component{
     }
 } 
    
-   
+const mapStateToProps = (state)=>{
+    return{
+        lang: state.currentLang
+    }
+}
 
 
-export default Voucher;
+export default connect(mapStateToProps)(Voucher);

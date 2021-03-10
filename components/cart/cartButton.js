@@ -1,18 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import translation from '../../utills/translation';
 
 const cartButton = (props)=> {
-
-  // const  checkForVisibillity= ()=> {
-  //   if (props.path === "/help" || "/checkout" || "/order-received"){
-  //     return true;
-  //   }else{
-  //     return false;
-  //   }
-  // }
-
-
-
     return(
         <button  className="cart-btn" onClick={props.clicked} >
             <span className="cart-btn-header">
@@ -33,7 +23,7 @@ const cartButton = (props)=> {
                   </svg> 
                    &nbsp;
                  </span>
-                   {props.products.length} Items
+                   {props.products.length} {translation[props.lang].cart.items}
                 </span>
                 <span className="cart-btn-price"> $ {props.totalPrice}</span>
        </button>
@@ -43,7 +33,8 @@ const cartButton = (props)=> {
 const mapStateToProps = (state)=> {
     return{
       products: state.products,
-      totalPrice: state.totalPrice
+      totalPrice: state.totalPrice,
+      lang: state.currentLang
     }
   }
 

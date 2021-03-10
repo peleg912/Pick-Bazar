@@ -15,8 +15,8 @@ class productCard extends Component{
         productId: ""
     };
 
-  
     
+
     traceProduct = (title)=> {
         const product = this.props.products.find(p=> p.title === title);
         return product;
@@ -63,20 +63,22 @@ class productCard extends Component{
 
     
 
-    getCount = ()=> {
-            this.props.productsDistribution.forEach(p => {
-                if (p.productTitle === this.props.title){
-                    return (
-                     <span className="counter"> {p.amount} </span>
-                    )
-                }
-            });
-        
+    getCount =  ()=> {
+        const pr =  this.props.productsDistribution.find(p => {p.productTitle === this.props.title});
+        if (pr === undefined){
+            console.log('t');
+            return(
+                <span className="counter"> 1 </span>
+            )
+        }else{
+            return (
+                <span className="counter"> {pr.amount} </span>
+            )
+        }
     }
 
     
     render(){
-        const c = this.getCount();
         return(
             <div className="pro-card-container">
             <div className="pro-card">
@@ -105,8 +107,8 @@ class productCard extends Component{
                         </rect></svg>
                 </button>
 
-                <span className="counter"> {this.state.counter} </span>
-                {/* {c} */}
+                {/* <span className="counter"> {this.state.counter} </span> */}
+                            {this.getCount()}
                 <button className="change-btn" onClick={(event)=>this.plusHandler(event)}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 12 12">
                         <g id="Group_3351" data-name="Group 3351" transform="translate(-1367 -190)">

@@ -1,13 +1,15 @@
 import React from 'react';
 import times from '../../utills/times';
 import DeliveryCard from './deliveryCard';
+import translation from '../../utills/translation';
+import {connect} from 'react-redux';
 
 const deliverySchedule = (props)=> {
 
 
     return(
     <div className="checkout-info-container">
-        <h3> Delivery Schedule</h3>
+        <h3> {translation[props.lang].checkout.two}</h3>
         
      <div className="info-btn-group">
         <div className="radio-group">
@@ -27,4 +29,10 @@ const deliverySchedule = (props)=> {
     )
 }
 
-export default deliverySchedule;
+const mapStateToProps = (state)=> {
+    return{
+        lang: state.currentLang
+     }
+};
+
+export default connect(mapStateToProps)(deliverySchedule);

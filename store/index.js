@@ -5,9 +5,11 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 
 const initialState = {
+ currentLang: "English",
  products: [],
  productsDistribution: [],
  totalPrice: 0.00,
+ currentAmountPerProduct:0,
  currentCategory: null,
  addresses: [
      {

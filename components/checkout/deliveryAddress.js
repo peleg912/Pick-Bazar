@@ -3,6 +3,7 @@ import AddressCard from './addressCard';
 import EditAddressModal from './editAddressModal';
 import {connect} from 'react-redux';
 import AddAddressModal from './addAddressModal';
+import translation from '../../utills/translation';
 
 const deliveryAddress = (props)=> {
 
@@ -15,7 +16,7 @@ const deliveryAddress = (props)=> {
     return(
         <>
         <div className="checkout-info-container">
-            <h3 >Delivery Address</h3>
+            <h3 >{translation[props.lang].checkout.one}</h3>
             
          <div className="info-btn-group">
             <div className="radio-group">
@@ -35,7 +36,7 @@ const deliveryAddress = (props)=> {
              <div>
                  <svg xmlns="http://www.w3.org/2000/svg" width="10px" height="12px" viewBox="0 0 12 12"><g id="Group_3351" data-name="Group 3351" transform="translate(-1367 -190)"><rect data-name="Rectangle 520" width="12" height="2" rx="1" transform="translate(1367 195)" fill="currentColor"></rect><rect data-name="Rectangle 521" width="12" height="2" rx="1" transform="translate(1374 190) rotate(90)" fill="currentColor"></rect></g></svg>
              </div>
-             Add Address
+             {translation[props.lang].checkout.addAddress}
          </button>
 
          </div>
@@ -63,7 +64,8 @@ const deliveryAddress = (props)=> {
 
 const mapStateToProps = (state)=> {
     return{
-        addresses: state.addresses
+        addresses: state.addresses,
+        lang: state.currentLang
      }
 };
 

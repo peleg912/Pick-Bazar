@@ -4,23 +4,24 @@ import {connect} from 'react-redux';
 import AddCreditCardModal from './addCreditCardModal';
 import Voucher from './voucher';
 import Link from 'next/link';
+import translation from '../../utills/translation';
 
 const paymentOption = (props)=> {
     return(
         <div className="checkout-info-container">
 
-          <h3 >Payment Option</h3>
+          <h3> {translation[props.lang].checkout.four} </h3>
 
           <header className="payment-header">
               <span className="payment-saved-cards">
-                  Saved Cards
+              {translation[props.lang].checkout.saved}
                 </span>
 
               <button type="button" className="btn btn-add-card" data-bs-toggle="modal" data-bs-target="#addCreditModal">
                   <span className="payment-groupstyle__IconWrapper-sc-7ryf95-2 eqfksf">
                     <svg xmlns="http://www.w3.org/2000/svg" width="10px" height="12px" viewBox="0 0 12 12"><g id="Group_3351" data-name="Group 3351" transform="translate(-1367 -190)"><rect data-name="Rectangle 520" width="12" height="2" rx="1" transform="translate(1367 195)" fill="currentColor"></rect><rect data-name="Rectangle 521" width="12" height="2" rx="1" transform="translate(1374 190) rotate(90)" fill="currentColor"></rect></g></svg>
                  </span>
-                 Add Card
+                 {translation[props.lang].checkout.addCard}
              </button>
 
              {/* MODAL */}
@@ -61,7 +62,7 @@ const paymentOption = (props)=> {
                 <span className="TermConditionText">
                     By making this purchase you agree to our
                     <span className="TermConditionLink">
-                        terms and conditions.
+                    {translation[props.lang].checkout.terms}
                     </span>
                 </span>
 
@@ -84,7 +85,8 @@ const paymentOption = (props)=> {
 const mapStateToProps = (state)=>{
     return{
         creditCards: state.creditCards,
-        products: state.products
+        products: state.products,
+        lang: state.currentLang
     }
 }
 

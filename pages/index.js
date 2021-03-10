@@ -42,26 +42,7 @@ class Home extends Component{
       }
     }
 
-    // productsDisplayHandler = ()=>{
-    //   if(this.state.showAllProducts){
-    //     return (
-    //       <AllProducts/>
-    //     )
-    //   } else if(!this.state.showAllProducts){
-    //       if(){
-    //         return(
-
-    //         )
-    //       }else{
-    //         return (
-
-    //         )
-    //       }
-    //   }
-    //   // {this.state.showAllProducts ?
-    //   //  : 
-    //   //   <CategoryProducts/>}
-    // }
+    
 
   
     render(){
