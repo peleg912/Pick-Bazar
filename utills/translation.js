@@ -34,7 +34,10 @@ const translation = {
             addCard: "Agregar tarjeta",
             saved: "Tarjetas guardadas",
             haveVoucher: "Tienes un cupón?",
-            terms: "términos y Condiciones."
+            terms: "términos y Condiciones.",
+            yourOrder: "Su pedido",
+            fee: "Gastos de envío",
+            discount: "Descuento"
         }
     },
     "English": {
@@ -60,7 +63,10 @@ const translation = {
             addCard: "Add Card",
             saved: "Saved Cards",
             haveVoucher: "Do you have a voucher?",
-            terms: "terms and conditions."
+            terms: "terms and conditions.",
+            yourOrder: "Your Order",
+            fee: "Delivery Fee",
+            discount: "Discount"
         }
     }
 }

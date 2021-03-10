@@ -2,6 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import SummaryProduct from './summaryProduct';
 import EmptyCheckout from './emptyCheckout';
+import translation from '../../utills/translation';
+
 
 const orderSummary = (props)=> {
     return(
@@ -10,7 +12,7 @@ const orderSummary = (props)=> {
                 <div style={{position: 'relative', zIndex: '999', transform: 'translate3d(0px, 0px, 0px'}}>
 
                     <div className="OrderInfo">
-                       <h3 >Your Order</h3>
+                       <h3 >{translation[props.lang].checkout.yourOrder}</h3>
 
                        {props.products.length < 1 ? <EmptyCheckout/> :
                     <>
@@ -69,12 +71,12 @@ const orderSummary = (props)=> {
                         </div>
 
                         <div className="checkout-twostyle__TextWrapper">
-                            <span className="checkout__Text">Delivery Fee</span>
+                            <span className="checkout__Text">{translation[props.lang].checkout.fee}</span>
                             <span className="checkout__Text">$0.00</span>
                         </div>
 
                         <div className="checkout-twostyle__TextWrapper">
-                            <span className="checkout__Text">Discount</span>
+                            <span className="checkout__Text">{translation[props.lang].checkout.discount}</span>
                             <span className="checkout__Text">$0.00</span>
 
                          </div>
@@ -102,7 +104,8 @@ const mapStateToProps = (state)=> {
     return{
         productsDist: state.productsDistribution,
         totalPrice: state.totalPrice,
-        products: state.products
+        products: state.products,
+        lang: state.currentLang
     }
 }
 
