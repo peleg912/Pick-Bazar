@@ -8,11 +8,17 @@ import DemosButton from './demosButton';
 import {connect} from 'react-redux';
 import CartItemsWrapper from '../cart/cartItemWrapper';;
 import CartItem from '../cart/cartItem';
+import MobileNavbar from '../../mobile/components/navbar/mobileNavbar';
 
 class MainLayout extends Component {
 
     state={
-        showCheckout: false
+        showCheckout: false,
+        screenSize: ""
+    }
+
+    componentDidMount(){
+       this.setState({screenSize: window.screen.width})
     }
 
     openCheckoutHandler = ()=> {
@@ -48,26 +54,29 @@ class MainLayout extends Component {
 
 
     render(){
+      
         return(
             <>
             <MyHead/>
 
    
-             <div >
+             <div>
                  <Navbar path={this.props.path}/>
+                 <MobileNavbar/>
              </div>
-   
-             {! this.state.showCheckout ? <CartButton clicked={this.openCheckoutHandler} /> 
+ 
+             {/* {! this.state.showCheckout ? <CartButton clicked={this.openCheckoutHandler} /> 
               : <Cart close={this.closeCheckoutHandler} >
                {this.cartDisplayHandler()}
               </Cart>  }
               
-              <DemosButton/>
+              <DemosButton/> 
    
-             <div >
+            <div >
              
                  {this.props.children}
-             </div>
+             </div>  */}
+             
              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossOrigin="anonymous"/>
              <script src="https://cdn.jsdelivr.net/npm/translate@1/translate.min.js"></script>
            </>
