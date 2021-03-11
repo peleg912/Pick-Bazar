@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import translation from '../../utills/translation';
 
 class editAddressModal extends Component{
 
@@ -77,7 +78,7 @@ await this.props.onEditingAddress(address);
            style={{width: '100%', height: '44px'}} 
            data-bs-dismiss="modal"
            onClick={(event)=>this.editAddress(event)}>
-              Change Address
+              {translation[this.props.lang].modals.saveAddress}
           </button>
       
           </form>
@@ -94,4 +95,10 @@ const mapDispatchToProps= (dispatch)=>{
   } 
 }
 
-export default connect(null, mapDispatchToProps)(editAddressModal);
+const mapStateToProps= (state)=>{
+  return{
+    lang : state.currentLang
+  } 
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(editAddressModal);

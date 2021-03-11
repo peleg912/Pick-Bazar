@@ -7,7 +7,11 @@ const languageMenu = (props)=> {
        <div className="lang-menu-container">
            <div className="lang-menu-inner">
                   {languages.map(lang=> {return(
-                      <LanguageItem key={lang.name} name={lang.name} img={lang.img}/>
+                      <LanguageItem 
+                      clicked= {props.clicked}
+                      key={lang.name} 
+                      name={lang.name} 
+                      img={lang.img}/>
                   )})}
            </div>
        </div>

@@ -1,10 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import translation from '../../utills/translation';
 
 const languageItem = (props)=> {
 
-    const changeLang = ()=> {
-        props.onChangingLang(props.name);
+    const changeLang = async ()=> {
+       await props.onChangingLang(props.name);
+       await props.clicked();
     }
 
     return(
@@ -12,7 +14,7 @@ const languageItem = (props)=> {
             <span className="flag-wrapper">
                 <img src={props.img} style={{display: 'block', width: '20px', height: 'auto', boxSizing: 'border-box'}} />
             </span>
-              {props.name}
+              {translation[props.lang].languages[props.name]}
          </button>
     )
 }
@@ -23,4 +25,10 @@ const mapDispatchToProps = (dispatch)=> {
     }
 }
 
-export default connect(null, mapDispatchToProps)(languageItem);
+const mapStateToProps = (state)=> {
+    return{
+        lang: state.currentLang
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(languageItem);

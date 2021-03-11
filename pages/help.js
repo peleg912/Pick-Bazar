@@ -2,7 +2,7 @@ import React from 'react';
 import Qst from '../components/help-page/qst';
 import Footer from '../components/help-page/footer';
 import qa from '../utills/qa';
-import translate from "translate";
+
 
 const help = (props)=> {
     return(
@@ -16,8 +16,7 @@ const help = (props)=> {
                             key={obj.id}
                              id={obj.id}
                             _id={obj._id}
-                            a={obj.a}
-                            q={obj.q}/>
+                            __id={obj.__id}/>
                         ))}
                     </div>
                 </div>
@@ -26,5 +25,9 @@ const help = (props)=> {
         </div>
     )
 }
+
+
+
+
 
 export default help;

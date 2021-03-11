@@ -1,12 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import {connect} from 'react-redux';
+import translation from '../utills/translation';
 
 const orderReceived = (props)=> {
-
-    const getDate = ()=> {
-        return new Date();
-    }
 
     return(
 
@@ -14,44 +11,44 @@ const orderReceived = (props)=> {
      <div className="OrderReceivedContainer">
 
         <Link href="/">
-        <a className="home-btn" >Back to Home</a>
+        <a className="home-btn" >{translation[props.lang].order.backHome}</a>
         </Link>
 
         <div className="order-receivedstyle__OrderInfo">
-         <h2 >Order Received</h2>
-         <p className="thank-you">Thank you. Your order has been received</p>
+         <h2 >{translation[props.lang].order.orderRec}</h2>
+         <p className="thank-you">{translation[props.lang].order.tnx}</p>
 
          <div className="order-receivedstyle__InfoBlockWrapper">
 
              <div className="ckSHFg">
-                 <p className="kLpUPh">Order Number</p>
+                 <p className="kLpUPh">{translation[props.lang].order.orderNum}</p>
                  <p className="bdirGO">1444</p>
              </div>
 
              <div className="ckSHFg">
-                 <p className="kLpUPh">Date</p>
+                 <p className="kLpUPh">{translation[props.lang].order.date}</p>
                  <p className="bdirGO">March 14, 2019</p>
             </div>
             
             <div className="ckSHFg">
-                <p className="kLpUPh">Total</p>
+                <p className="kLpUPh">{translation[props.lang].order.total}</p>
                 <p className="bdirGO">${props.totalPrice}</p>
             </div>
 
             <div className="ckSHFg">
-                <p className="kLpUPh">Payment Method</p>
-                <p className="bdirGO">Cash on delivery</p>
+                <p className="kLpUPh">{translation[props.lang].order. paymentMet}</p>
+                <p className="bdirGO">{translation[props.lang].order.cashOn}</p>
             </div>
 
          </div>
     </div>
     
        <div className="order-receivedstyle__OrderInfo">
-           <h2>Order Details</h2>
+           <h2>{translation[props.lang].order.orderDet}</h2>
 
            <div className="order-receivedstyle__ListItem">
              <div className="order-receivedstyle__ListTitle">
-                <p className="order-receivedstyle__Text">Total Item</p>
+                <p className="order-receivedstyle__Text">{translation[props.lang].order.totalItems}</p>
              </div>
 
             <div className="order-receivedstyle__ListDes">
@@ -62,7 +59,7 @@ const orderReceived = (props)=> {
         
         <div className="order-receivedstyle__ListItem">
           <div className="order-receivedstyle__ListTitle">
-            <p className="order-receivedstyle__Text">Order Time</p>
+            <p className="order-receivedstyle__Text">{translation[props.lang].order.orderTime}</p>
           </div>
 
           <div className="order-receivedstyle__ListDes">
@@ -73,7 +70,7 @@ const orderReceived = (props)=> {
          
          <div className="order-receivedstyle__ListItem">
              <div className="order-receivedstyle__ListTitle">
-                <p className="order-receivedstyle__Text">Delivery Time</p>
+                <p className="order-receivedstyle__Text">{translation[props.lang].order.deliveryTime}</p>
             </div>
 
             <div className="order-receivedstyle__ListDes">
@@ -83,7 +80,7 @@ const orderReceived = (props)=> {
         
         <div className="order-receivedstyle__ListItem">
             <div className="order-receivedstyle__ListTitle">
-                <p className="order-receivedstyle__Text">Delivery Location</p>
+                <p className="order-receivedstyle__Text">{translation[props.lang].order.deliveryLoc}</p>
             </div>
             
             <div className="order-receivedstyle__ListDes">
@@ -96,11 +93,11 @@ const orderReceived = (props)=> {
 
 
     <div className="order-receivedstyle__TotalAmount">
-        <h2 className="dgVukO">Total Amount</h2>
+        <h2 className="dgVukO">{translation[props.lang].order.totalAmount}</h2>
 
             <div className="order-receivedstyle__ListItem">
                 <div className="order-receivedstyle__ListTitle">
-                    <p className="order-receivedstyle__Text">Sub Total</p>
+                    <p className="order-receivedstyle__Text">{translation[props.lang].order.sub}</p>
                 </div>
                 
                 <div className="order-receivedstyle__ListDes">
@@ -110,18 +107,18 @@ const orderReceived = (props)=> {
 
             <div className="order-receivedstyle__ListItem">
                 <div className="order-receivedstyle__ListTitle">
-                    <p className="order-receivedstyle__Text">Payment Method</p>
+                    <p className="order-receivedstyle__Text">{translation[props.lang].order.paymentMet}</p>
               </div>
         
             <div className="order-receivedstyle__ListDes">
-                <p className="bdirGO">Cash On Delivery</p>
+                <p className="bdirGO">{translation[props.lang].order.cashOn}</p>
             </div>
         
        </div>
     
        <div className="order-receivedstyle__ListItem">
             <div className="order-receivedstyle__ListTitle">
-                 <p className="order-receivedstyle__Text">Cash on delivery</p>
+                 <p className="order-receivedstyle__Text">{translation[props.lang].order.cashOn}</p>
             </div>
         
         <div className="order-receivedstyle__ListDes">
@@ -131,7 +128,7 @@ const orderReceived = (props)=> {
     
     <div className="order-receivedstyle__ListItem">
          <div className="order-receivedstyle__ListTitle">
-            <p className="order-receivedstyle__Text">Total</p>
+            <p className="order-receivedstyle__Text">{translation[props.lang].order.total}</p>
          </div>
 
         <div className="order-receivedstyle__ListDes">
@@ -151,7 +148,8 @@ const mapStateToProps = (state)=> {
     return{
         totalPrice: state.totalPrice,
         products: state.products,
-        orderSummary: state.orderSum
+        orderSummary: state.orderSum,
+        lang: state.currentLang
     }
 }
 

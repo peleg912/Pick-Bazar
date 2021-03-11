@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import Link from 'next/link';
+import translation from '../../utills/translation';
 
 
 class addCreditCardModal extends Component{
@@ -97,7 +98,7 @@ class addCreditCardModal extends Component{
                     type="submit" 
                     className="btn-edit-modal"
                     style={{width: '100%', height: '44px'}}>
-                        Pay Now
+                        {translation[this.props.lang].modals.payNow}
                      </button>
                         {/* </a>
                       </Link> */}
@@ -119,4 +120,12 @@ const mapDisaptchToProps = (dispatch)=> {
     }
 }
 
-export default connect(null, mapDisaptchToProps)(addCreditCardModal);
+
+const mapStateToProps= (state)=>{
+  return{
+    lang : state.currentLang
+  } 
+}
+
+
+export default connect(mapStateToProps, mapDisaptchToProps)(addCreditCardModal);

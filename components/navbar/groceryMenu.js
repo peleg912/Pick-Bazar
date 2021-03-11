@@ -8,7 +8,10 @@ const groceryMenu = (props)=> {
            <div className="grocery-menu-inner">
                 <div style={{display: 'flex', flexDirection: 'column', boxSizing: 'border-box', cursor: 'pointer', margin: '0px'}}>
                   {groceryItems.map(item=> {return(
-                      <GroceryItem key={item.name} name={item.name} img={item.img}/>
+                      <GroceryItem
+                       key={item.name} 
+                       name={item.name} 
+                       img={item.img}/>
                   )})}
                 </div>
            </div>

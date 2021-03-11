@@ -24,9 +24,9 @@ class Voucher extends Component{
             :
             <div className="CouponInputBox">
                 <div className="couponstyle__CouponBoxWrapper">
-                    <input placeholder="Enter voucher code here" />
+                    <input placeholder= {translation[this.props.lang].modals.enterVoucher}/>
                     <button type="button" className="button__StyledButton-sc-1mky0hn-0 jSETsp" onClick={this.closeVoucher}>
-                        Apply
+                    {translation[this.props.lang].modals.apply}
                     </button>
                 </div>
             </div>
@@ -43,5 +43,7 @@ const mapStateToProps = (state)=>{
     }
 }
 
+
+ 
 
 export default connect(mapStateToProps)(Voucher);

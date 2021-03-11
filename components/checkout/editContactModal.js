@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import translation from '../../utills/translation';
 
 class editContactModal extends Component{
 
@@ -62,7 +63,7 @@ class editContactModal extends Component{
                style={{width: '100%', height: '44px'}}
                data-bs-dismiss="modal"
                onClick={this.editContact}>
-                  Save Contact
+                  {translation[this.props.lang].modals.saveContact}
               </button>
           
               </form>
@@ -80,4 +81,10 @@ const mapDispatchToProps = (dispatch)=> {
     }
 }
 
-export default connect(null, mapDispatchToProps)(editContactModal);
+const mapStateToProps= (state)=>{
+    return{
+      lang : state.currentLang
+    } 
+  }
+
+export default connect(mapStateToProps, mapDispatchToProps)(editContactModal);
