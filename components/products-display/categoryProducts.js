@@ -31,7 +31,7 @@ class CategoryProducts extends Component{
 
     render(){
         return(
-          <div className="ad-container" >
+          <div className="ad-container web" >
           <div className="container">
              <div className="bla">
               {this.categoryHandler()}

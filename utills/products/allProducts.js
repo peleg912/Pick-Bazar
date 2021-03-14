@@ -4,7 +4,7 @@ import meatAndFish from './meatandfish';
 const allProducts = [
     { 
      category : "Fruits & Vegtebles",
-      data: [...vegs]  
+     data: [...vegs]  
     },
     {
       category : "Meat &  Fish",

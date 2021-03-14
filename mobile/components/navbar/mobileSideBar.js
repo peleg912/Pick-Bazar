@@ -8,23 +8,18 @@ class mobileSideBar extends Component{
         {t: "Checkout Alternative", href: "/"}, {t: "Your Order", href: "/"}, {t: "Order Invoice", href: "/order-received"},
         {t: "Teams and Services", href: "/"}, {t: "Privacy Policy", href: "/"}, {t: "Need Help ?", href: "/help"},
         {t: "Offer", href: "/"}
-        ],
-        open: true
+        ]
+        
     }
 
-    closeHandler = async ()=> {
-    //    await this.props.clicked();
-    //    await this.setState({open: false});
-    }
 
  render(){
    return(
-<div>
-    {this.state.open ?
+
  <div className="drawer-content-wrapper" style={{width: '316px'}} id="drawer">
   <div className="drawer-content">
           
-     <div onClick={this.closeHandler}>
+     <div onClick={this.props.clicked}>
         <div className="headerstyle__DrawerClose">
           <svg xmlns="http://www.w3.org/2000/svg" width="10.003" height="10" viewBox="0 0 10.003 10"><path data-name="_ionicons_svg_ios-close (5)" d="M166.686,165.55l3.573-3.573a.837.837,0,0,0-1.184-1.184l-3.573,3.573-3.573-3.573a.837.837,0,1,0-1.184,1.184l3.573,3.573-3.573,3.573a.837.837,0,0,0,1.184,1.184l3.573-3.573,3.573,3.573a.837.837,0,0,0,1.184-1.184Z" transform="translate(-160.5 -160.55)" fill="currentColor"></path></svg>
         </div>
@@ -88,8 +83,8 @@ class mobileSideBar extends Component{
        </div>
      </div>
    </div>
- </div> : null}
-</div>
+ </div> 
+
         )
       }
  } 

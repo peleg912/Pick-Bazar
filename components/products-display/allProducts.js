@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const allProducts = (props)=> {
     return(
-        <div className="ad-container" >
+        <div className="ad-container web" >
          <div className="container">
             <div className="bla">
                 {vegs.map(v=>(

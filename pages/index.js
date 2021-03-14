@@ -5,6 +5,7 @@ import AllProducts from '../components/products-display/allProducts';
 import CategoryProducts from '../components/products-display/categoryProducts';
 import SearchedProducts from '../components/products-display/searchedProducts';
 import NoResault from '../components/products-display/noResault';
+import MobileContentWrapper from '../mobile/components/home/contentWrapper';
 import {connect} from 'react-redux';
 
 
@@ -50,7 +51,9 @@ class Home extends Component{
       
     
         return(
-         <div className="container" style={{marginLeft: '0', marginTop:'110px'}}>
+          <>
+          <MobileContentWrapper/>
+         <div className="container web" style={{marginLeft: '0', marginTop:'110px'}}>
 
            <div className="row ">
              <div className="col-4 align-self-start" >
@@ -58,16 +61,13 @@ class Home extends Component{
              </div>
               <div className="col-8" style={{height: '350px'}} >
               <Banner />
-               {/* {this.state.showAllProducts ?
-               <AllProducts/> : 
-               <CategoryProducts/>} */}
                {this.componentDidUpdate()}
               </div>
             
            </div>
 
          </div>
-         
+         </>
         )
     }
 }

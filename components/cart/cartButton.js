@@ -4,7 +4,7 @@ import translation from '../../utills/translation';
 
 const cartButton = (props)=> {
     return(
-        <button  className="cart-btn" onClick={props.clicked} >
+        <button  className="cart-btn web" onClick={props.clicked} >
             <span className="cart-btn-header">
                 <span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="12.686" height="16" viewBox="0 0 12.686 16"><g data-name="Group 2704" transform="translate(-27.023 -2)">

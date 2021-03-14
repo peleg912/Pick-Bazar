@@ -66,7 +66,7 @@ const orderSummary = (props)=> {
                     
                     <div className="CalculationWrapper">
                         <div className="checkout-twostyle__TextWrapper">
-                            <span className="checkout__Text">Sub Total</span>
+                            <span className="checkout__Text">{translation[props.lang].checkout.subTotal}</span>
                             <span className="checkout__Text">${props.totalPrice}</span>
                         </div>
 
@@ -82,8 +82,8 @@ const orderSummary = (props)=> {
                          </div>
 
                          <div className="checkout-twostyle__TextWrapper" style={{marginTop: '20px'}}>
-                             <span className="checkout-twostyle__Bold">Total 
-                               <span className="checkout-twostyle__Small">(Incl. VAT)</span>
+                             <span className="checkout-twostyle__Bold">{translation[props.lang].checkout.total} 
+                               <span className="checkout-twostyle__Small"></span>
                              </span>
                              <span className="checkout-twostyle__Bold">${props.totalPrice}</span>
                         </div>

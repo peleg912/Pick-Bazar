@@ -49,7 +49,7 @@ const orderReceived = (props)=> {
            <div className="order-receivedstyle__ListItem">
              <div className="order-receivedstyle__ListTitle">
                 <p className="order-receivedstyle__Text">{translation[props.lang].order.totalItems}</p>
-             </div>
+             </div> :
 
             <div className="order-receivedstyle__ListDes">
                 <p className="bdirGO">{props.products.length} Items</p>
@@ -60,7 +60,7 @@ const orderReceived = (props)=> {
         <div className="order-receivedstyle__ListItem">
           <div className="order-receivedstyle__ListTitle">
             <p className="order-receivedstyle__Text">{translation[props.lang].order.orderTime}</p>
-          </div>
+          </div> :
 
           <div className="order-receivedstyle__ListDes">
             <p className="bdirGO">1.00pm 10/12/19</p>
@@ -71,7 +71,7 @@ const orderReceived = (props)=> {
          <div className="order-receivedstyle__ListItem">
              <div className="order-receivedstyle__ListTitle">
                 <p className="order-receivedstyle__Text">{translation[props.lang].order.deliveryTime}</p>
-            </div>
+            </div> :
 
             <div className="order-receivedstyle__ListDes">
                 <p className="bdirGO">{props.orderSummary.time}</p>
@@ -81,7 +81,7 @@ const orderReceived = (props)=> {
         <div className="order-receivedstyle__ListItem">
             <div className="order-receivedstyle__ListTitle">
                 <p className="order-receivedstyle__Text">{translation[props.lang].order.deliveryLoc}</p>
-            </div>
+            </div> :
             
             <div className="order-receivedstyle__ListDes">
                 <p className="bdirGO">{props.orderSummary.address}</p>
@@ -98,7 +98,7 @@ const orderReceived = (props)=> {
             <div className="order-receivedstyle__ListItem">
                 <div className="order-receivedstyle__ListTitle">
                     <p className="order-receivedstyle__Text">{translation[props.lang].order.sub}</p>
-                </div>
+                </div> :
                 
                 <div className="order-receivedstyle__ListDes">
                     <p className="bdirGO">${props.totalPrice}</p>
@@ -108,7 +108,7 @@ const orderReceived = (props)=> {
             <div className="order-receivedstyle__ListItem">
                 <div className="order-receivedstyle__ListTitle">
                     <p className="order-receivedstyle__Text">{translation[props.lang].order.paymentMet}</p>
-              </div>
+              </div> :
         
             <div className="order-receivedstyle__ListDes">
                 <p className="bdirGO">{translation[props.lang].order.cashOn}</p>
@@ -119,7 +119,7 @@ const orderReceived = (props)=> {
        <div className="order-receivedstyle__ListItem">
             <div className="order-receivedstyle__ListTitle">
                  <p className="order-receivedstyle__Text">{translation[props.lang].order.cashOn}</p>
-            </div>
+            </div> :
         
         <div className="order-receivedstyle__ListDes">
           <p className="bdirGO">10</p>
@@ -129,14 +129,147 @@ const orderReceived = (props)=> {
     <div className="order-receivedstyle__ListItem">
          <div className="order-receivedstyle__ListTitle">
             <p className="order-receivedstyle__Text">{translation[props.lang].order.total}</p>
-         </div>
+         </div> :
 
         <div className="order-receivedstyle__ListDes">
-            <p className="bdirGO">$${props.totalPrice}</p>
+            <p className="bdirGO">${props.totalPrice}</p>
         </div>
     </div>
 
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  </div>
 </div>

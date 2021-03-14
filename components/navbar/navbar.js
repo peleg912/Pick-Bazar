@@ -16,6 +16,8 @@ class Navbar extends Component{
     searchTerm: ''
   }
 
+
+
   
   componentDidUpdate(){
     // console.log(this.props.path);
@@ -72,7 +74,7 @@ getImg = ()=> {
     render(){
         return(
 
-     <header className="header-container" id="layout-header">
+     <header className="header-container web" id="layout-header">
 
        <div className="header-left-menu">
 
@@ -127,7 +129,7 @@ getImg = ()=> {
              type="search" 
              value={this.state.searchTerm} 
              name="search" 
-             placeholder="Search your products from here" 
+             placeholder={translation[this.props.lang].toolbar.search}
              className="header-input"
              onChange={(event)=>this.searchBarHandler(event)}/>
             </form>

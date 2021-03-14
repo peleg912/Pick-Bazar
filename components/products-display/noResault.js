@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const noResault = ()=> {
     return (
-        <div className="NoResultWrapper">
+        <div className="NoResultWrapper web">
             <h3>Sorry, No result found :(</h3>
             <div className="no-resultstyle__ImageWrapper">
               <img src="https://shop-redq.vercel.app/_next/static/images/no-result-a242b3bc908f26b79710c3d30f5230ac.svg" alt="No Result"></img>

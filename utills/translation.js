@@ -1,22 +1,99 @@
 const translation = {
     "Arabic": {
         "toolbar": {
-            writtenLang: 'عربى',
-            groceryHeader: 'بقالة',
-            search: 'ابحث عن منتجاتك من هنا',
             offer: 'عرض',
             help: 'تحتاج مساعدة',
-            item: 'بند',
-            cart: 'هل لديك قسيمة؟',
-            cartBtn:'الدفع'
+            lang: 'عربى',
+            join: 'انضم',
+            search: 'ابحث عن منتجاتك من هنا',
+        },
+        "cart": {
+            items:'بند',
+            haveVoucher: "هل لديك قسيمة؟",
+            checkout: "بند",
+            noProducts: "لا توجد منتجات"
+        },
+        "checkout": {
+            one: "عنوان التسليم",
+            addAddress: "اضف عنوان",
+            two: "جدول التسليم",
+            three: "رقم الاتصال",
+            addContact: "إضافة جهة اتصال",
+            four:"خيار الدفع",
+            addCard: "إضافة بطاقة",
+            saved: "البطاقات المحفوظة",
+            haveVoucher: "هل لديك قسيمة؟",
+            terms: "الأحكام والشروط.",
+            yourOrder: "طلبك",
+            subTotal: 'المجموع الفرعي',
+            fee: "رسوم التوصيل",
+            discount: "خصم",
+            total: 'مجموع (مدفوع. ضريبة القيمة المضافة)'
+        },
+        "order": {
+            orderRec:"طلب وارد",
+            tnx: "شكرا لكم. تم استلام طلبك",
+            orderNum: "رقم الطلب",
+            date: "تاريخ",
+            total: "مجموع",
+            paymentMet: "طريقة الدفع او السداد",
+            orderDet: "تفاصيل الطلب",
+            totalItems: "مجموع البند",
+            orderTime:"وقت الطلب",
+            deliveryTime:"موعد التسليم",
+            deliveryLoc:"موقع التسليم",
+            totalAmount:"المبلغ الإجمالي",
+            sub:"المجموع الفرعي",
+            cashOn:"الدفع عن الاستلام",
+            backHome: "العودة إلى المنزل"
+        },
+        "help": {
+            q1: "كيف تتصل بخدمة العملاء؟",
+            a1: "يتوفر فريق تجربة العملاء لدينا 7 أيام في الأسبوع ، ونقدم طريقتين للاتصال. البريد الإلكتروني والدردشة. نحن نحاول الرد بسرعة ، لذلك لا تحتاج إلى الانتظار طويلًا للحصول على رد!",
+            q2: "فشل تثبيت التطبيق ، وكيفية تحديث معلومات النظام؟",
+            a2: "يرجى قراءة الوثائق بعناية. لدينا أيضًا بعض برامج الفيديو التعليمية عبر الإنترنت فيما يتعلق بهذه المشكلة. في حالة استمرار المشكلة ، يرجى فتح تذكرة في منتدى الدعم",
+            q3: "استجابة الموقع يستغرق بعض الوقت ، وكيفية تحسين؟",
+            a3: "في البداية ، يرجى التحقق من اتصالك بالإنترنت. لدينا أيضًا بعض برامج الفيديو التعليمية عبر الإنترنت فيما يتعلق بهذه المشكلة. في حالة استمرار المشكلة ، يرجى فتح تذكرة في منتدى الدعم.",
+            q4: "كيف يمكنني إنشاء حساب؟",
+            a4: "إذا كنت تريد فتح حساب للاستخدام الشخصي ، يمكنك القيام بذلك عبر الهاتف أو عبر الإنترنت. يجب أن يستغرق فتح الحساب عبر الإنترنت بضع دقائق فقط.",
+            credit: "Pickbazar هو منتج من قبل"
+        },
+        "groceryMenu": {
+            Grocery: "بقالة",
+            GroceryTwo: "GroceryTwo",
+            Bakery: "Bakery",
+            Makeup: "ميك أب",
+            Bags:"أكياس",
+            Clothing:"ملابس",
+            Furniture:"أثاث المنزل",
+            FurnitureTwo: "FurnitureTwo",
+            Book: "كتاب",
+            Medicine: "الدواء"
+        },
+        "languages": {
+            English: "الإنجليزية",
+            Arabic: "عربى",
+            Chinese: "صينى",
+            German: "ألمانية",
+            Hebrew: "اللغة العبرية",
+            Spanish: "الأسبانية"
+        },
+        "modals": {
+            saveAddress: "حفظ العنوان",
+            saveContact: "حفظ جهة الاتصال",
+            payNow: "ادفع الآن",
+            enterVoucher: "أدخل رمز القسيمة هنا",
+            apply: "تطبيق"
         }
     },
+    /*************************************************************/ 
     "Spanish": {
         "toolbar": {
             offer: 'Oferta',
             help: 'Necesitas ayuda',
             lang: 'Español',
-            join: 'Unirse'
+            join: 'Unirse',
+            search: 'Busque sus productos desde aquí'
         },
         "cart": {
             items: "articulo",
@@ -37,7 +114,9 @@ const translation = {
             terms: "términos y Condiciones.",
             yourOrder: "Su pedido",
             fee: "Gastos de envío",
-            discount: "Descuento"
+            discount: "Descuento",
+            subTotal: 'Subtotal',
+            total: 'Total (Incl. IVA)'
         },
         "order": {
             orderRec:"orden recibida",
@@ -95,12 +174,14 @@ const translation = {
             apply: "Aplicar"
         }
     },
+     /*************************************************************/ 
     "English": {
         "toolbar": {
             offer: 'Offer',
             help: 'Need Help',
             lang: 'English',
-            join: 'Join'
+            join: 'Join',
+            search: 'Search your products from here'
         },
         "cart": {
             items: "Items",
@@ -121,7 +202,9 @@ const translation = {
             terms: "terms and conditions.",
             yourOrder: "Your Order",
             fee: "Delivery Fee",
-            discount: "Discount"
+            discount: "Discount",
+            subTotal: 'Sub Total',
+            total: 'Total (Incl. IVA)'
         },
         "order": {
             orderRec:"Order Received",

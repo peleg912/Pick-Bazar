@@ -9,7 +9,6 @@ import {connect} from 'react-redux';
 const checkout = (props)=> {
     return(
         <form>
-
             <div className="checkout-container">
                 <div className="checkout-wrapper">
                     <div className="checkout-info">
@@ -19,10 +18,9 @@ const checkout = (props)=> {
                         <PaymentOption/>
                     </div>
                     <OrderSummary/>
-
-                    
                 </div>
             </div>
+
 
         </form>
     )

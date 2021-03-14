@@ -14,14 +14,6 @@ const cartItem = (props)=> {
     }
 
  
-
-    const traceProduct = (title)=> {
-        const product = props.products.find(p=> p.title === title);
-        return product;
-    }
-
-
-
     return(
         <div className="cart-item-container">
          <div className="cart-item-counter">
