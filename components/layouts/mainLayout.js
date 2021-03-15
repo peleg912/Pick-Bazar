@@ -58,8 +58,6 @@ class MainLayout extends Component {
         return(
             <>
             <MyHead/>
-
-   
              <div>
                  <Navbar path={this.props.path}/>
                  <MobileNavbar/>

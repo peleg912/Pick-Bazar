@@ -61,21 +61,7 @@ class productCard extends Component{
         await this.props.onRemovingProduct(this.traceProduct(this.state.currentProduct.title));
     }
 
-    
 
-    getCount =  ()=> {
-        const pr =  this.props.productsDistribution.find(p => {p.productTitle === this.props.title});
-        if (pr === undefined){
-            console.log('t');
-            return(
-                <span className="counter"> 1 </span>
-            )
-        }else{
-            return (
-                <span className="counter"> {pr.amount} </span>
-            )
-        }
-    }
 
     
     render(){
@@ -107,8 +93,8 @@ class productCard extends Component{
                         </rect></svg>
                 </button>
 
-                {/* <span className="counter"> {this.state.counter} </span> */}
-                            {this.getCount()}
+                <span className="counter"> {this.state.counter} </span>
+                       
                 <button className="change-btn" onClick={(event)=>this.plusHandler(event)}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 12 12">
                         <g id="Group_3351" data-name="Group 3351" transform="translate(-1367 -190)">
@@ -138,7 +124,6 @@ class productCard extends Component{
     return{
       onAddingProduct: (productData) => dispatch({type: 'ADD_PRODUCT', product :productData}),
       onRemovingProduct : (productData) => dispatch({type: 'REMOVE_PRODUCT', product :productData}),
-      onClearProducts : ()=> dispatch({type: 'CLEAR_PRODUCTS'})
     }
   }
 

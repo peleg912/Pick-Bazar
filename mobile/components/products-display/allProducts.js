@@ -2,18 +2,9 @@ import React from 'react';
 import ProductCard from './productCard';
 import _allProducts from '../../../utills/products/allProducts';
 import vegs from '../../../utills/products/vegs';
+import Link from 'next/link';
 
 const allProducts = (props)=> {
-
-    const getProducts = ()=> {
-        _allProducts.map(obj=> {
-         obj.data.map(p=> {return(
-             <ProductCard/>
-          )})
-         })
-        }
-        
- 
 
     return(
         <div className="grPQmX">
@@ -24,11 +15,21 @@ const allProducts = (props)=> {
          })
         } */}
         {vegs.map(p=> (
+          <Link 
+          key={p.title}
+          as={`/products/${p.title}`}
+          href={{
+          pathname: '/products',
+          query: {
+          product: p.title
+             }}}>
+             <a>
             <ProductCard
-            key={p.title}
             title={p.title}
             price={p.price}
             img={p.img}/>
+             </a>
+         </Link>
         ))}
        </div>
 

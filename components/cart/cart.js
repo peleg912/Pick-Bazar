@@ -29,7 +29,7 @@ class Cart extends Component{
                     {this.props.products.length > 0 ?
                       <button className="cart-Checkout-Btn" type="button" >
                           <Link href="/checkout" >
-                            <a className="cart-btn-title">Checkout</a>
+                            <a className="cart-btn-title">{translation[this.props.lang].cart.checkout}</a>
                           </Link>
                            <span className="cart-title-price">${this.props.totalPrice}</span>
                      </button>

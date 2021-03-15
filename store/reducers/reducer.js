@@ -5,9 +5,11 @@ const reducer = (state= null, action)=> {
             const newPrice = state.totalPrice + newProduct.price;
             let newDistribution = [...state.productsDistribution];
             const p = state.productsDistribution.findIndex(pro=> pro.productTitle === newProduct.title);
+           
 
             if(p !== -1){
                 newDistribution[p].amount= (newDistribution[p].amount)+1;
+               
             }
             else{
                 newDistribution = newDistribution.concat({
@@ -16,14 +18,16 @@ const reducer = (state= null, action)=> {
                     price: newProduct.price,
                     img: newProduct.img
                 });
-                
+              
             }
+
 
             return {
                 ...state,
                 products: state.products.concat(newProduct),
                 totalPrice: newPrice,
                 productsDistribution: newDistribution,
+               
             }
 
         case 'REMOVE_PRODUCT':
@@ -43,7 +47,7 @@ const reducer = (state= null, action)=> {
              ...state,
             products: newProducts,
             totalPrice: price,
-            productsDistribution: _newDistribution
+            productsDistribution: _newDistribution,
         }
 
         case 'CLEAR_PRODUCT':
