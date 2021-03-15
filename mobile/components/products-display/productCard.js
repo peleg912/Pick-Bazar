@@ -1,6 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import {connect} from 'react-redux';
+import Link from 'next/link';
 
 class ProductCard extends Component{
 
@@ -20,16 +21,6 @@ class ProductCard extends Component{
     const product = this.props.products.find(p=> p.title === title);
     return product;
 }
-
-// firstCountHandler = async (event)=> {
-//   event.preventDefault();
-//   await this.setState((prevState)=>{ return {
-//       touched: true, 
-//       productId : '_' + Math.random().toString(36).substr(2, 9)}
-//   })
-
-//  await this.props.onAddingProduct({...this.state.currentProduct, id: this.state.productId});
-// }
 
 plusHandler =  async (event)=> {
   event.preventDefault();
@@ -62,6 +53,12 @@ minusHandler =  async (event)=> {
 
   render(){
     return(
+      <Link as={`/products/${this.props.title}`}
+      href={{
+      pathname: '/products',
+      query: {
+      product: this.props.title}}} >
+      <a>
       <div className="dncxKl">
  
            <div className="jOFDKQ">
@@ -103,6 +100,8 @@ minusHandler =  async (event)=> {
           </div>
  
        </div>
+       </a>
+      </Link>
  
      )
   }

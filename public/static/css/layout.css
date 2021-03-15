@@ -4310,3 +4310,36 @@ z-index: -1;
     padding: 10px;
     cursor: pointer;
 }
+
+.ejsBAM{
+    box-sizing: border-box;
+    min-width: 0px;
+    margin: 2rem 0px 0px;
+}
+
+.iZvlvx{
+    padding: 0px 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    border-radius: 6px;
+    appearance: none;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-shrink: 0;
+    text-align: center;
+    height: 38px;
+    text-decoration: none;
+    font-family: inherit;
+    color: rgb(0, 158, 127);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(241, 241, 241);
+}
+
+@media only screen and (min-width: 1536px){
+    .iZvlvx{
+    font-size: unset;
+    }
+}

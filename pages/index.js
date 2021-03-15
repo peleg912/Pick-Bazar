@@ -47,12 +47,12 @@ class Home extends Component{
 
   
     render(){
-      const {categories} = this.props;
+      const {categories, path} = this.props;
       
     
         return(
           <>
-          <MobileContentWrapper/>
+          <MobileContentWrapper path={path}/>
          <div className="container web" style={{marginLeft: '0', marginTop:'110px'}}>
 
            <div className="row ">

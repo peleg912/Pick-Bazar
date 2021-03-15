@@ -10,6 +10,7 @@ import CartItemsWrapper from '../../../components/cart/cartItemWrapper';;
 import CartItem from '../../../components/cart/cartItem';
 import EmptyCart from '../../../components/cart/emptyCart';
 import CartWrapper from '../cart/cartWrapper';
+import CategoryProducts from '../products-display/categoryProducts';
 
 class ContentWrapper extends Component {
 
@@ -43,11 +44,17 @@ class ContentWrapper extends Component {
   }
 
   render(){
+    const {path} = this.props;
+    console.log(path);
+
     return(
       <div className="eVHuwP">
       <CategoryMenu/>
       <Banner style={{marginBottom: '25px'}}/>
-      <AllProducts/>
+
+     {path ==="/" ?
+      <AllProducts/> : 
+      <CategoryProducts/>}
 
 
       {! this.state.showCart ? <CheckoutBtn clicked={this.openCartHandler} /> 

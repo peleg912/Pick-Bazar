@@ -60,7 +60,7 @@ class MainLayout extends Component {
             <MyHead/>
              <div>
                  <Navbar path={this.props.path}/>
-                 <MobileNavbar/>
+                 <MobileNavbar />
              </div>
  
               {! this.state.showCheckout ? <CartButton clicked={this.openCheckoutHandler} /> 

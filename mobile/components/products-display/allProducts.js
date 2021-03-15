@@ -3,37 +3,50 @@ import ProductCard from './productCard';
 import _allProducts from '../../../utills/products/allProducts';
 import vegs from '../../../utills/products/vegs';
 import Link from 'next/link';
+import { Component } from 'react';
+import LoadMoreBtn from './loadMoreBtn';
 
-const allProducts = (props)=> {
+class AllProducts extends Component{
 
+  state = {
+    allProducts:[],
+    counter: 10
+  }
+
+componentDidMount(){
+  let allP = [];
+  _allProducts.forEach(obj=> {
+    obj.data.forEach(p=> {
+      allP.push(p);
+    })
+  });
+  this.setState({allProducts: allP})
+}
+
+loadMorehandler = ()=> {
+  this.setState((prevState)=> {
+    return {counter: (prevState.counter * 2) }
+  })
+}
+
+
+  render(){
     return(
-        <div className="grPQmX">
-          {/* {_allProducts.forEach(obj=>{
-            obj.data.map(p=> {console.log(p); return(
-             <ProductCard/>
-          )})
-         })
-        } */}
-        {vegs.map(p=> (
-          <Link 
-          key={p.title}
-          as={`/products/${p.title}`}
-          href={{
-          pathname: '/products',
-          query: {
-          product: p.title
-             }}}>
-             <a>
+      <>
+      <div className="grPQmX">
+        {this.state.allProducts.slice(0,this.state.counter).map(p=> (
             <ProductCard
+             key={p.title}
             title={p.title}
             price={p.price}
             img={p.img}/>
-             </a>
-         </Link>
-        ))}
+         ))} 
        </div>
 
-    )
+            {this.state.allProducts.length > this.state.counter ?
+            <LoadMoreBtn clicked={this.loadMorehandler}/> : null}
+            </>
+   )}
 }
 
-export default allProducts;
+export default AllProducts;
