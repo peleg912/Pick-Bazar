@@ -28,7 +28,7 @@ const infoSide = (props)=> {
         </div>
 
         <p className="info-side-desc">
-            The lemon/lime, Citrus limon Osbeck, is a species of small evergreen tree in the flowering plant family Rutaceae, native to South Asia, primarily North eastern India.
+            {props.product.desc}
         </p>
         
         <div className="info-side-add-btn-wrapper">

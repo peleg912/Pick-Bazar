@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import SingleProductWrapper from '../components/single-product-display/singleProductWrapper';
-import vegs from '../utills/products/vegs';
+import _allProducts from '../utills/products/_allProducts';
 
 class products extends Component {
 
     static getInitialProps = async({query})=> {
             const productName = query.product;
-            const currentProduct = vegs.find(v=> v.title === productName);
-
+            const currentProduct = _allProducts.find(v=> v.title === productName);
             return {currentProduct};
     }
 
 
     render(){
         const {currentProduct} = this.props;
+        console.log(currentProduct);
         return(
             <SingleProductWrapper product={currentProduct}/>
         )
