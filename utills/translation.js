@@ -451,7 +451,7 @@ const translation = {
             items: "Artikel",
             haveVoucher: "Hast du einen Gutschein?",
             checkout: "Auschecken",
-            noProducts: "Hast du einen Gutschein?"
+            noProducts: "Keine Produkte gefunden"
         },
         "checkout": {
             one: "Lieferadresse",

@@ -10,7 +10,7 @@ const initialState = {
  productsDistribution: [],
  totalPrice: 0.00,
  currentAmountPerProduct:0,
- currentCategory: null,
+ currentCategory: 'No Category Selected',
  addresses: [
      {
      id: '_' + Math.random().toString(36).substr(2, 9),

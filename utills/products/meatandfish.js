@@ -12,7 +12,7 @@ const meatAndFish = [
         "desc": "Meat is animal flesh that is eaten as food. Humans have hunted and killed animals for meat since prehistoric times. The advent of civilization allowed the domestication of animals such as chickens, sheep, rabbits, pigs and cattle."
     },
     {
-        "img": "/static/images/products/meatandfishe/codfillet.jpg",
+        "img": "/static/images/products/meatandfish/codfillet.jpg",
         "title": "Cod Fillet",
         "price":"7.5",
         "desc": "Cod is the common name for the demersal fish genus Gadus, belonging to the family Gadidae. Cod is also used as part of the common name for a number of other fish species, and some species suggested to belong to genus Gadus are not called cod."

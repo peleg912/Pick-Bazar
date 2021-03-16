@@ -92,17 +92,19 @@ class addCreditCardModal extends Component{
                  </div>
               </div>
   
-                    {/* <Link href="/order-received">
-                        <a style={{textDecoration:"none"}}> */}
+                
+              <Link href="/order-received" >
+                <a style={{textDecoration:"none"}}>
                      <button
-                    type="submit" 
-                    className="btn-edit-modal"
-                    style={{width: '100%', height: '44px'}}>
-                        {translation[this.props.lang].modals.payNow}
+                        // data-bs-dismiss="modal"
+                        type="submit" 
+                        className="btn-edit-modal"
+                        style={{width: '100%', height: '44px', textDecoration:"none" }}>
+                          {translation[this.props.lang].modals.payNow}
                      </button>
-                        {/* </a>
-                      </Link> */}
-                  
+                        </a>
+                      </Link>
+               
   
               </form>
           </div>

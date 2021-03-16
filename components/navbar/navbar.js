@@ -13,26 +13,34 @@ class Navbar extends Component{
   state = {
     groceryMenu: false,
     languageMenu: false,
-    searchTerm: ''
+    searchTerm: '',
+  }
+
+  componentDidMount(){
+    if(this.props.path === '/help' || '/checkout' || "/order-received" || this.props.path.startsWith('/products')){
+      document.getElementById("myForm").style.visibility = "hidden";
+    } 
+
+    if(this.props.path === "/" || this.props.path.startsWith("/?search=")){
+      document.getElementById("myForm").style.visibility = "visible";
+    }
   }
 
 
 
-  
   componentDidUpdate(){
-    // console.log(this.props.path);
-    // if(this.props.path === '/help' || '/checkout' || "/order-received"){
-    //   document.getElementById("myForm").setAttribute("hidden", "true");
-    // } ;
+    if(this.props.path === '/help' || '/checkout' || "/order-received"){
+      document.getElementById("myForm").style.visibility = "hidden";
+    }
 
-    // if(this.props.path !== '/help' || '/checkout' || "/order-received"){
-    //   document.getElementById("myForm").removeAttribute("hidden");
-    // }
-
-   
+    if(this.props.path === "/" || this.props.path.startsWith("/?search=")){
+      document.getElementById("myForm").style.visibility = "visible";
+    }
   }
 
-  search = ()=>{ 
+ 
+
+  search = async ()=>{ 
     let searchResaults = [];
     if (this.state.searchTerm === ""){
       return;
@@ -112,9 +120,9 @@ getImg = ()=> {
           </div>
          </div>
 
-           <form className="header-search" id="myForm">
-             <div onClick={this.search} style={{cursor: "pointer"}}>
-               <Link  as={`/?search=${this.state.searchTerm}`}
+           <form className="header-search" id="myForm" >
+             <div onClick={(event)=>this.search(event)} style={{cursor: "pointer"}}>
+               <Link as={`/?search=${this.state.searchTerm}`}
                      href={{
                       pathname: '/',
                        query: {
@@ -126,11 +134,12 @@ getImg = ()=> {
                </Link>
              </div>
              <input
+             style={{backgroundColor: 'rgb(247, 247, 247)'}}
              type="search" 
              value={this.state.searchTerm} 
              name="search" 
              placeholder={translation[this.props.lang].toolbar.search}
-             className="header-input"
+             className="header-input form-control"
              onChange={(event)=>this.searchBarHandler(event)}/>
             </form>
 

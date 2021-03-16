@@ -13,9 +13,9 @@ class products extends Component {
 
     render(){
         const {currentProduct} = this.props;
-        console.log(currentProduct);
         return(
             <SingleProductWrapper product={currentProduct}/>
+            
         )
 
     }

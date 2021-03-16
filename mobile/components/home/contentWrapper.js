@@ -10,7 +10,7 @@ import CartItemsWrapper from '../../../components/cart/cartItemWrapper';;
 import CartItem from '../../../components/cart/cartItem';
 import EmptyCart from '../../../components/cart/emptyCart';
 import CartWrapper from '../cart/cartWrapper';
-import CategoryProducts from '../products-display/categoryProducts';
+import CategoryProducts from '../products-display/mobileCategoryProducts';
 
 class ContentWrapper extends Component {
 
@@ -45,11 +45,10 @@ class ContentWrapper extends Component {
 
   render(){
     const {path} = this.props;
-    console.log(path);
 
     return(
       <div className="eVHuwP">
-      <CategoryMenu/>
+      <CategoryMenu path={path}/>
       <Banner style={{marginBottom: '25px'}}/>
 
      {path ==="/" ?

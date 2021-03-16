@@ -39,7 +39,7 @@ const allProducts = [
       data: [...cooking]  
     },
     {
-      category : "Cooking",
+      category : "Breakfast",
       data: [...breakfast]  
     },
     {

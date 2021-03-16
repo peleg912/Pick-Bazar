@@ -2493,13 +2493,19 @@ z-index: -1;
     }
   }
 
+.modal-content{
+    background-color: rgb(247, 248, 249);
+    padding: 30px;
+    width: 360px;
+}
+
 .OrderInfo{
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.OrderInfo h3{
+.your-order{
     font-family: Lato, sans-serif;
     font-size: 15px;
     font-weight: 700;
@@ -2793,6 +2799,16 @@ z-index: -1;
     /* z-index: 99999;
     display: flex; */
 }
+
+
+@media screen and (max-width: 375px) {
+    .edit-modal{
+      left: unset;
+      right: 4px;
+    }
+  }
+
+
 
 .inner-modal{
     width: 100%;
@@ -3117,6 +3133,14 @@ z-index: -1;
     color: rgb(0, 158, 127);
     cursor: pointer;
 }
+
+@media screen and (max-width: 376px) {
+    .carousel {
+     padding-left: 0px;
+     padding-right: 0px;
+     margin-bottom: 15px;
+    }
+  }
 
 .CouponBoxWrapper{
     position: relative;
@@ -4106,6 +4130,12 @@ z-index: -1;
     grid-template-columns: repeat(2, minmax(180px, 1fr));
 }
 
+.form-control:focus{
+    box-shadow: unset;
+} 
+
+
+
 .dncxKl{
     background-color: rgb(255, 255, 255);
     overflow: hidden;
@@ -4342,4 +4372,14 @@ z-index: -1;
     .iZvlvx{
     font-size: unset;
     }
+}
+
+
+.isAmBG{
+    font-size: 13px;
+    color: rgb(13, 17, 54);
+    font-weight: 700;
+    padding: 5px 10px;
+    background-color: rgb(241, 241, 241);
+    border-radius: 6px;
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ProductsListModal from './productsListModal';
+import {connect} from 'react-redux';
 
 class CategoryMenu extends Component{
     state={
@@ -20,8 +21,14 @@ class CategoryMenu extends Component{
               <div style={{position: 'relative', transform: 'translate3d(0px, 0px, 0px)'}}>
                   <div className="dNgrir" style={{backgroundColor: 'rgb(255, 255, 255)', paddingTop: '15px', boxShadow: 'rgba(0, 0, 0, 0.06) 0px 1px 2px'}}>
                       <div className="eJmvPm">
-                          <span >No Category Selected</span>
+                          {this.props.path === '/'?
+                          <span >No Category Selected</span> :
+                          <span className="isAmBG">{this.props.category}</span>}
                       </div>
+
+                     
+
+
                         <button className="jNBJTJ" onClick={this.modalHandler}>Filter</button>
                       </div>
                   </div>
@@ -35,4 +42,10 @@ class CategoryMenu extends Component{
     }
 }
 
-export default CategoryMenu;
+const mapStateToProps = (state)=> {
+    return{
+        category: state.currentCategory
+    }
+}
+
+export default connect(mapStateToProps)(CategoryMenu);

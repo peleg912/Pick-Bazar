@@ -20,9 +20,9 @@ class CategoryProducts extends Component{
 
 
     render(){
-        return(
-            <div className="grPQmX">
-              {this.categoryHandler()}
+      return(
+        <div className="grPQmX">
+              {/* {this.categoryHandler()} */}
             </div>
         )
     };

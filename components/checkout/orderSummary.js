@@ -12,7 +12,7 @@ const orderSummary = (props)=> {
                 <div style={{position: 'relative', zIndex: '999', transform: 'translate3d(0px, 0px, 0px'}}>
 
                     <div className="OrderInfo">
-                       <h3 >{translation[props.lang].checkout.yourOrder}</h3>
+                       <h3 className="your-order">{translation[props.lang].checkout.yourOrder}</h3>
 
                        {props.products.length < 1 ? <EmptyCheckout/> :
                     <>

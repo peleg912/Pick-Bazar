@@ -14,12 +14,8 @@ class MainLayout extends Component {
 
     state={
         showCheckout: false,
-        screenSize: ""
     }
 
-    componentDidMount(){
-       this.setState({screenSize: window.screen.width})
-    }
 
     openCheckoutHandler = ()=> {
         this.setState({showCheckout : true});
@@ -37,7 +33,7 @@ class MainLayout extends Component {
             )
         }else {
             return(
-                <CartItemsWrapper>
+                <CartItemsWrapper path={this.props.path}>
                     {this.props.productsDistribution.map(p=> (
                         <CartItem 
                         key={p.productTitle}
@@ -63,10 +59,11 @@ class MainLayout extends Component {
                  <MobileNavbar />
              </div>
  
-              {! this.state.showCheckout ? <CartButton clicked={this.openCheckoutHandler} /> 
-              : <Cart close={this.closeCheckoutHandler} >
+          
+              {! this.state.showCheckout ? <CartButton clicked={this.openCheckoutHandler} path={this.props.path}/> 
+              : <Cart close={this.closeCheckoutHandler} path={this.props.path}>
                {this.cartDisplayHandler()}
-              </Cart>  }
+              </Cart>  } 
               
               <DemosButton/> 
    
